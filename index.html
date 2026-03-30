@@ -392,6 +392,124 @@
             #tout { max-height: 240px; }
             .pc.wide { grid-column: span 1; }
         }
+
+        /* ═══ INJECTION 1: PLAIN MODE & TOGGLE BUTTON ══════════════════════════ */
+
+        /* Toggle button — sits at top-right of #main, always visible */
+        .theme-toggle {
+            position: fixed; top: 1rem; right: 1.2rem; z-index: 9999;
+            font-family: var(--font); font-size: 0.68rem;
+            color: var(--text-dimmer); background: var(--bg-card);
+            border: 1px solid var(--border-b); border-radius: 2px;
+            padding: 0.35rem 0.75rem; cursor: pointer;
+            transition: color 0.2s, border-color 0.2s, background 0.2s;
+            letter-spacing: 0.03em;
+        }
+        .theme-toggle:hover {
+            color: var(--green); border-color: var(--green);
+            background: var(--green-glow);
+        }
+
+        /* ── Plain mode overrides ──────────────────────────────────────────── */
+
+        /* Kill the scanline */
+        body.plain-mode .scanline { display: none; }
+
+        /* Kill the grain */
+        body.plain-mode::before { display: none; }
+
+        /* Kill the CRT flicker on boot */
+        body.plain-mode #boot { animation: none; }
+
+        /* Light background & dark text */
+        body.plain-mode {
+            --bg:          #f5f5f4;
+            --bg-panel:    #ffffff;
+            --bg-card:     #fafaf9;
+            --bg-card-h:   #f0f0ef;
+            --green:        #16a34a;
+            --green-dim:    #22c55e;
+            --green-dk:     #166534;
+            --green-glow:   rgba(22,163,74,0.08);
+            --amber:        #d97706;
+            --red:          #dc2626;
+            --text:         #1c1c1c;
+            --text-dim:     #525252;
+            --text-dimmer:  #a3a3a3;
+            --border:       #e5e5e4;
+            --border-b:     #d4d4d3;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        /* Hide all terminal prompt rows */
+        body.plain-mode .pcmd { display: none; }
+
+        /* Hide the interactive terminal widget entirely */
+        body.plain-mode .term-wrap { display: none; }
+
+        /* Flatten cards — remove the dark-mode grid gap trick */
+        body.plain-mode .skills-grid,
+        body.plain-mode .proj-grid,
+        body.plain-mode .contact-grid { background: var(--border); }
+
+        /* Give name a dark colour */
+        body.plain-mode .name { color: #111; }
+
+        /* Mute the blinking caret */
+        body.plain-mode .name .caret { background: var(--green); animation: none; opacity: 1; }
+
+        /* Fix hardcoded #fff titles that CSS variables cannot reach */
+        body.plain-mode .exp-title  { color: #111111; }
+        body.plain-mode .pc-name    { color: #111111; }
+        body.plain-mode .edu-uni    { color: #111111; }
+
+        /* Fix the tag/stack chip backgrounds so text is legible */
+        body.plain-mode .tag { background: #ffffff; color: var(--text-dim); border-color: var(--border-b); }
+        body.plain-mode .pt  { background: #ffffff; color: var(--text-dim); border-color: var(--border-b); }
+
+        /* Fix availability badge so it reads on light bg */
+        body.plain-mode .avail {
+            background: rgba(22,163,74,0.07);
+            border-color: rgba(22,163,74,0.3);
+        }
+
+        /* Fix exp-badge (Live Client / Internship) contrast */
+        body.plain-mode .exp-badge {
+            color: #b45309;
+            border-color: rgba(180,83,9,0.3);
+        }
+
+        /* Fix live badge on project cards */
+        body.plain-mode .pc-live-badge {
+            color: var(--green);
+            border-color: rgba(22,163,74,0.3);
+        }
+
+        /* Fix education status badge */
+        body.plain-mode .edu-status {
+            color: #b45309;
+            border-color: rgba(180,83,9,0.25);
+        }
+        body.plain-mode .edu-sdot { background: #b45309; }
+
+        /* Soften card hover shadow so it doesn't look muddy on light bg */
+        body.plain-mode .exp:hover {
+            box-shadow: 0 0 20px rgba(0,0,0,0.06);
+        }
+
+        /* Soften the section borders */
+        body.plain-mode .hdr { border-color: var(--border); }
+        body.plain-mode .exp { border-color: var(--border); border-left-color: var(--green-dk); }
+        body.plain-mode .footer { border-color: var(--border); }
+
+        /* Scrollbar for plain mode */
+        body.plain-mode ::-webkit-scrollbar-track { background: var(--bg); }
+        body.plain-mode ::-webkit-scrollbar-thumb { background: var(--border-b); }
+
+        /* Toggle label changes when active */
+        body.plain-mode .theme-toggle { color: var(--text-dim); border-color: var(--border-b); background: #fff; }
+        body.plain-mode .theme-toggle:hover { color: var(--green); border-color: var(--green); }
     </style>
 </head>
 <body>
@@ -402,6 +520,8 @@
 
 <!-- ════════════════════ MAIN ════════════════════════════ -->
 <div id="main">
+    <!-- INJECTION 2: TOGGLE BUTTON -->
+    <button id="themeToggle" class="theme-toggle">[ Toggle Plain Text ]</button>
 
     <!-- HEADER -->
     <header class="hdr" id="about">
@@ -1073,6 +1193,80 @@ document.getElementById('cvBtn').addEventListener('click', e => {
     tin.focus();
   }
 });
+// ══════════════════════════════════════════════════════════════
+//  INJECTION 3: PLAIN MODE TOGGLE + SYSTEM PREFERENCE DETECTION
+// ══════════════════════════════════════════════════════════════
+
+(function () {
+  const STORAGE_KEY = 'portfolio-plain-mode';
+  const body        = document.body;
+  const btn         = document.getElementById('themeToggle');
+
+  /* ── Helpers ─────────────────────────────────────────────── */
+
+  function applyPlain() {
+    body.classList.add('plain-mode');
+    btn.textContent = '[ Toggle Terminal ]';
+    sessionStorage.setItem(STORAGE_KEY, '1');
+  }
+
+  function applyTerminal() {
+    body.classList.remove('plain-mode');
+    btn.textContent = '[ Toggle Plain Text ]';
+    sessionStorage.removeItem(STORAGE_KEY);
+  }
+
+  /* ── Skip boot + go straight to main in plain mode ─────── */
+
+  function skipBoot() {
+    const boot = document.getElementById('boot');
+    const main = document.getElementById('main');
+    if (boot) { boot.style.display = 'none'; }
+    if (main) {
+      main.style.opacity = '1';
+      main.classList.add('on');
+    }
+    // Cancel the boot sequence by advancing bi past the end
+    bi = BOOT.length + 999;
+    // Still initialise the terminal in case they switch back
+    // (initTerm is safe to call even when term-wrap is hidden)
+    initTerm();
+  }
+
+  /* ── Auto-detect system light preference ─────────────────── */
+
+  const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+
+  // Priority: session storage (explicit user choice) > system preference
+  const storedPlain = sessionStorage.getItem(STORAGE_KEY) === '1';
+
+  if (storedPlain || prefersLight) {
+    // Apply immediately — before the boot sequence renders anything visible
+    applyPlain();
+    // Defer boot-skip until the boot vars (bi, BOOT) are defined
+    // by wrapping in a setTimeout with 0ms so it runs after this IIFE
+    // but before bootNext fires (bootNext is scheduled with 250ms)
+    setTimeout(skipBoot, 0);
+  }
+
+  /* ── Toggle click handler ─────────────────────────────────── */
+
+  btn.addEventListener('click', () => {
+    if (body.classList.contains('plain-mode')) {
+      applyTerminal();
+    } else {
+      applyPlain();
+    }
+  });
+
+  /* ── React to OS-level preference changes at runtime ──────── */
+
+  window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', e => {
+    // Only honour OS change if user hasn't explicitly toggled
+    if (!sessionStorage.getItem(STORAGE_KEY)) {
+      if (e.matches) { applyPlain(); skipBoot(); }
+      else           { applyTerminal(); }
+    }
+  });
+}());
 </script>
-</body>
-</html>
