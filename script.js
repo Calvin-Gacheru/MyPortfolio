@@ -190,7 +190,7 @@
    5. PORTFOLIO CARD — 3D tilt on hover
 ─────────────────────────────────────────── */
 (function initCardTilt() {
-  document.querySelectorAll('.pcard').forEach(card => {
+  document.querySelectorAll('.pcard:not(.cert-card)').forEach(card => {
     card.addEventListener('mousemove', (e) => {
       const rect = card.getBoundingClientRect();
       const x    = e.clientX - rect.left;
@@ -202,5 +202,88 @@
       card.style.transform = `translateY(-4px) rotateX(${rotX}deg) rotateY(${rotY}deg)`;
     });
     card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+  });
+})();
+
+
+/* ──────────────────────────────────────────
+   6. CERTIFICATION CARDS — click to flip
+─────────────────────────────────────────── */
+(function initCertificationCards() {
+  const cards = document.querySelectorAll('.cert-card');
+  if (!cards.length) return;
+
+  cards.forEach(card => {
+    const inner = card.querySelector('.cert-card-inner');
+    const faces = card.querySelectorAll('.cert-face');
+
+    const syncCardHeight = () => {
+      if (!inner || !faces.length) return;
+
+      let maxHeight = 0;
+      faces.forEach(face => {
+        maxHeight = Math.max(maxHeight, face.scrollHeight);
+      });
+
+      const height = Math.ceil(maxHeight);
+      if (height > 0) {
+        inner.style.minHeight = `${height}px`;
+        card.style.minHeight = `${height}px`;
+      }
+    };
+
+    const previews = card.querySelectorAll('.cert-preview');
+    previews.forEach(preview => {
+      const image = preview.querySelector('.cert-image');
+      if (!image) return;
+
+      const onLoad = () => {
+        if (image.naturalWidth > 0) preview.classList.remove('is-missing');
+        syncCardHeight();
+      };
+
+      const onError = () => {
+        preview.classList.add('is-missing');
+        syncCardHeight();
+      };
+
+      image.addEventListener('load', onLoad);
+      image.addEventListener('error', onError);
+
+      if (image.complete) {
+        if (image.naturalWidth > 0) onLoad();
+        else onError();
+      }
+    });
+
+    syncCardHeight();
+    window.addEventListener('resize', syncCardHeight);
+
+    const toggleCard = () => {
+      const isFlipped = card.classList.toggle('is-flipped');
+      card.setAttribute('aria-pressed', String(isFlipped));
+    };
+
+    card.addEventListener('click', (event) => {
+      if (event.target.closest('a, button, .cert-preview, .cert-pdf')) return;
+      toggleCard();
+    });
+
+    card.querySelectorAll('[data-cert-toggle]').forEach(button => {
+      button.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        toggleCard();
+      });
+    });
+
+    card.addEventListener('keydown', (event) => {
+      const isToggleKey = event.key === 'Enter' || event.key === ' ';
+      if (!isToggleKey) return;
+      if (event.target.closest('a, button')) return;
+
+      event.preventDefault();
+      toggleCard();
+    });
   });
 })();
