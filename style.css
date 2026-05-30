@@ -39,7 +39,7 @@
   --bg-card-h:   #f2f6ff;
   --border:      rgba(17,24,39,0.12);
   --border-h:    rgba(0,92,184,0.36);
-  --text:        #0f172a;
+  --text:        #000000;
   --text-muted:  #475569;
   --accent:      #0070d9;
   --accent-2:    #00a8cc;
@@ -828,7 +828,7 @@ button { cursor: pointer; border: none; background: none; }
 
 .contact-sub { font-size: 0.95rem; color: var(--text-muted); margin-top: -1.5rem; margin-bottom: 2.5rem; }
 
-.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+/* .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; } */
 
 .contact-card {
   background: var(--bg-card); padding: 1.25rem 1.4rem;
