@@ -292,6 +292,7 @@
 document.addEventListener('click', (e) => {
   const navLinks = document.querySelector('.nav-links');
   const hamburger = document.querySelector('.hamburger');
+  const backdrop = document.querySelector('.menu-backdrop');
 
   // Ensure menu is open and the click wasn't on the hamburger button
   if (navLinks.classList.contains('open') && !hamburger.contains(e.target)) {
@@ -300,6 +301,9 @@ document.addEventListener('click', (e) => {
     if (!navLinks.contains(e.target) || e.target === navLinks || e.target.closest('.nav-link')) {
       navLinks.classList.remove('open');
       hamburger.classList.remove('open');
+      backdrop.classList.remove('active');
     }
   }
 });
+
+

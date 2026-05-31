@@ -139,6 +139,22 @@ button { cursor: pointer; border: none; background: none; }
   background: var(--nav-bg-2);
   box-shadow: 0 4px 40px rgba(0,0,0,0.6);
 }
+.menu-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 999; 
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition), visibility var(--transition);
+}
+
+.menu-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+}
 .nav-inner {
   max-width: var(--max-w);
   height: 100%;
@@ -930,7 +946,7 @@ button { cursor: pointer; border: none; background: none; }
   /* Nav mobile */
   .hamburger { display: flex; }
   .nav-links {
-    position: absolute;
+    position: fixed;
     top: 100%;
     left: 0;
     right: 0; 
@@ -938,15 +954,17 @@ button { cursor: pointer; border: none; background: none; }
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
-    flex-direction: column; 
+    flex-direction: column;
+    justify-content: center;
     align-items: center; 
-    gap: 1.25rem;
+    gap: 2rem;
     padding: 2rem 0;
+    padding-top: var(--nav-h); /* Prevents links from hiding under the navbar */
 
     /* Hidden state */
     opacity: 0; 
-    visibility: hidden;
-    transform: translateY(-10px); 
+    visibility: var(--transition);
+    transform: opacity var(--transition), transform var(--transition); 
     transition: all var(--transition);
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
   }
