@@ -219,13 +219,12 @@
               <span class="tag-pill">Docker</span>
               <span class="tag-pill">Kubernetes</span>
               <span class="tag-pill">Flask</span>
-              <span class="tag-pill">Fast-API</span>
+              <span class="tag-pill">fastAPI</span>
               <span class="tag-pill">Render</span>
               <span class="tag-pill">Git / GitHub</span>
               <span class="tag-pill">PostgreSQL</span>
               <span class="tag-pill">Redis</span>
               <span class="tag-pill">Django</span>
-              <span class="tag-pill">Fast-API</span>
               <span class="tag-pill">Linux</span>
             </div>
           </div>
@@ -333,42 +332,49 @@
       <h2 class="section-heading">PORTFOLIO</h2>
       <p class="portfolio-sub">Real things shipped — production deployments, client work &amp; experiments.</p>
 
+      <!-- AI & Machine Learning -->
+      <h3 class="portfolio-category-heading" style="margin-top: 2rem; margin-bottom: 1rem;">AI & Machine Learning</h3>
       <div class="portfolio-grid">
-
-        <article class="pcard featured">
-          <div class="pcard-header">
-            <i class="fas fa-gamepad pcard-icon"></i>
-            <div class="pcard-header-right">
-              <span class="live-badge"><span class="live-dot"></span>Live</span>
-              <div class="pcard-links">
-                <a href="https://calvin-gacheru.github.io/ArcadeKenya/" target="_blank" rel="noopener" aria-label="Live Demo"><i class="fas fa-arrow-up-right-from-square"></i></a>
-                <a href="https://github.com/Calvin-Gacheru/ArcadeKenya" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <!-- MySaidi Application -->
+          <article class="pcard featured">
+            <div class="pcard-header">
+              <i class="fas fa-shield-halved pcard-icon"></i>
+              <div class="pcard-header-right">
+                <div class="pcard-links">
+                  <a href="https://github.com/Calvin-Gacheru/MySaidi" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
               </div>
             </div>
-          </div>
-          <h3 class="pcard-title">Arcade Kenya</h3>
-          <p class="pcard-desc">Built, rebranded, and currently maintain a live multi-game browser platform. Multiple playable titles, scoring systems, and a polished UI deployed on GitHub Pages.</p>
-          <div class="pcard-tags">
-            <span>JavaScript</span><span>HTML5 Canvas</span><span>CSS3</span><span>Game Dev</span>
-          </div>
-        </article>
+            <h3 class="pcard-title">MySaidi - AI productivity Assistant</h3>
+            <p class="pcard-desc">A full-stack personal AI productivity assistant web application. It helps users plan their day, manage tasks, and track habits through natural conversation with an AI agent. The AI, named Saidi, uses natural language to add, update, remove, or review calendar events and tasks. It includes a dashboard, a calendar view, a habit tracker, and secure JWT authentication. The app functions as a Progressive Web App (PWA) with a mobile-optimized UI.</p>
+            <p class="pcard-desc">The system uses a decoupled browser-to-REST API architecture. The frontend is a vanilla JS/HTML/CSS SPA served directly by FastAPI. The backend handles PostgreSQL database operations (Users, Tasks, HabitLogs) and routes chat requests to a LangGraph-powered AI agent. The agent parses intents, runs Groq LLMs, and triggers bound tools to directly query or modify the user's schedule.</p>
+            <div class="pcard-tags">
+              <span>Python</span><span>FastAPI</span><span>LangChain</span><span>Groq LLM</span><span>PostgreSQL</span><span>LangGraph</span><span>Vanilla JS/HTML/CSS</span><span>PWA</span><span>JWT Auth</span>
+            </div>
+            <div class="pcard-extra-links">
+              <a href="https://github.com/Calvin-Gacheru/MySaidi" target="_blank" rel="noopener">MySaidi ↗</a>
+            </div>
+          </article>
 
-        <article class="pcard featured">
-          <div class="pcard-header">
-            <i class="fas fa-shield-halved pcard-icon"></i>
-            <div class="pcard-header-right">
+          <!-- Uber Price Predicion & MLOps -->
+          <article class="pcard">
+            <div class="pcard-header">
+              <i class="fas fa-chart-line pcard-icon"></i>
               <div class="pcard-links">
-                <a href="https://github.com/Calvin-Gacheru/MySaidi" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://github.com/Calvin-Gacheru/Uber-Price-Prediction" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
               </div>
             </div>
-          </div>
-          <h3 class="pcard-title">MySaidi - AI productivity Assistant</h3>
-          <p class="pcard-desc">a full-stack web app combining a FastAPI backend with a vanilla-JS frontend served by the same process. Saidi (Swahili for helper) is an AI chat agent powered by Groq's LLM that helps you plan your day, manage tasks and events, and track habits — all through natural conversation.</p>
-          <div class="pcard-tags">
-            <span>Python</span><span>LangChain</span><span>Groq</span><span>FastAPI</span>
-          </div>
-        </article>
+            <h3 class="pcard-title">Uber Price Prediction & Production MLOps Pipeline</h3>
+            <p class="pcard-desc">A production-ready machine learning and MLOps engineering project that predicts Uber ride prices using an optimized Random Forest Regressor. The project moves from raw data processing to an enterprise-grade multi-container architecture, featuring an automated CI/CD pipeline, a robust FastAPI backend with Pydantic validation, and an interactive Streamlit user interface. The trained model is served via a FastAPI REST backend and interacted with through a Streamlit UI, all orchestrated within a multi-container Docker environment with an automated GitHub Actions CI/CD pipeline.</p>
+            <div class="pcard-tags">
+              <span>Machine Learning (Random Forest)</span><span>Feature Engineering & Data Preprocessing</span><span>API Deployment (FastAPI, Pydantic)</span><span>Containerization & Orchestration (Docker)</span><span>UI Deployment(Streamlit)</span><span>CI/CD Automations (GitHub Actions)</span>
+            </div>
+            <div class="pcard-extra-links">
+              <a href="https://github.com/Calvin-Gacheru/Uber-Price-Prediction" target="_blank" rel="noopener">Uber Price Prediction ↗</a>
+            </div>
+          </article>
 
+        <!-- Maternal Risk Detection System -->
         <article class="pcard">
           <div class="pcard-header">
             <i class="fas fa-heartbeat pcard-icon"></i>
@@ -377,31 +383,35 @@
             </div>
           </div>
           <h3 class="pcard-title">Maternal Risk Detection System</h3>
-          <p class="pcard-desc">Predictive ML model classifying maternal health risk levels from patient indicators, aimed at improving early intervention in maternal and child healthcare.</p>
+          <p class="pcard-desc">This system predicts maternal health risks (such as Preeclampsia, Gestational Diabetes, and Anemia) using patient vitals and history. The system flags real-time outliers, explains its predictions using SHAP, manages patient records via an SQLite database, and automatically sends SMS appointment reminders and wellness tips to patients through an integrated API.</p>
           <div class="pcard-tags">
-            <span>Python</span><span>scikit-learn</span><span>Pandas</span><span>Healthcare ML</span>
-          </div>
-        </article>
-
-        <article class="pcard">
-          <div class="pcard-header">
-            <i class="fas fa-house-chimney pcard-icon"></i>
-            <div class="pcard-links">
-              <a href="https://github.com/Calvin-Gacheru/Predicting-Housing-Prices" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            </div>
-          </div>
-          <h3 class="pcard-title">Predictive Models</h3>
-          <p class="pcard-desc">Regression ML pipelines predicting Lung cancer survival, real estate and motor vehicle prices from structured datasets, with full EDA, feature engineering, and model evaluation.</p>
-          <div class="pcard-tags">
-            <span>Python</span><span>scikit-learn</span><span>Regression</span><span>NumPy</span>
+            <span>Explainable AI(SHAP)</span><span>Automated Task Scheduling(APScheduler)</span><span>Python & Pandas</span><span>Database Management (SQL)</span><span>Dashboard UI Development(streamlit)</span><span>Third-Party API Integration(Africa's Talking SMS)</span>
           </div>
           <div class="pcard-extra-links">
-            <a href="https://github.com/Calvin-Gacheru/Predicting-Housing-Prices" target="_blank" rel="noopener">Housing Model ↗</a>
-            <a href="https://github.com/Calvin-Gacheru/Predicting-Motor-Vehicle-Prices" target="_blank" rel="noopener">Vehicle Model ↗</a>
-            <a href="https://github.com/Calvin-Gacheru/Predicting-Lung-Cancer-Survival" target="_blank" rel="noopener">Cancer Model ↗</a>
+            <a href="https://github.com/Calvin-Gacheru/Maternal-Risk-Detection-System" target="_blank" rel="noopener">Maternal Risk Detection ↗</a>
           </div>
         </article>
 
+        <!-- Behavioural Explainer -->
+        <article class="pcard">
+          <div class="pcard-header">
+            <i class="fas fa-book pcard-icon"></i>
+            <div class="pcard-links">
+              <a href="https://github.com/Calvin-Gacheru/Behavioural-Explainer/" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <h3 class="pcard-title">Behavioural Explainer</h3>
+          <p class="pcard-desc">This system is a production-grade Retrieval-Augmented Generation (RAG) system for psychological framework analysis. It ingests and chunks psychological PDF documents, stores them in a vector database, and uses a local LLM to analyze user-provided human interaction scenarios. It strictly avoids offering advice, instead breaking down the scenarios into core conflict identification, operative psychological frameworks, behavioral mechanics, and structural signatures.</p>
+          <div class="pcard-tags">
+              <span>Large Language Models (LLMs)</span><span>AI Integration (Ollama, Llama 3.1)</span><span>Vector Databases & Semantic Search (Qdrant)</span><span>Retrieval-Augmented Generation (RAG) Architectures</span><span>Data Ingestion & Processing (PyMuPDF, text chunking)</span><span>Command Line Interface (CLI) Tooling (Typer)</span><span>Docker Containerization</span><span>Python (Pydantic, Environment Configuration)</span>
+          </div>
+        </article>
+      </div>
+
+      <!-- Data Engineering & Analytics -->
+      <h3 class="portfolio-category-heading" style="margin-top: 3rem; margin-bottom: 1rem;">Data Engineering & Analytics</h3>
+      <div class="portfolio-grid">
+        <!-- ETL Data Engineering -->
         <article class="pcard">
           <div class="pcard-header">
             <i class="fas fa-database pcard-icon"></i>
@@ -416,70 +426,7 @@
           </div>
         </article>
 
-        <article class="pcard">
-          <div class="pcard-header">
-            <i class="fas fa-chart-line pcard-icon"></i>
-            <div class="pcard-links">
-              <a href="https://github.com/Calvin-Gacheru/Time-Series-Analysis-and-Forecasting" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            </div>
-          </div>
-          <h3 class="pcard-title">Time Series &amp; Uber Analysis</h3>
-          <p class="pcard-desc">Deep data exploration, time series forecasting, and pattern analysis on large ride-share datasets — visualised insights with statistical decomposition.</p>
-          <div class="pcard-tags">
-            <span>Python</span><span>statsmodels</span><span>Matplotlib</span><span>Forecasting</span>
-          </div>
-          <div class="pcard-extra-links">
-            <a href="https://github.com/Calvin-Gacheru/Time-Series-Analysis-and-Forecasting" target="_blank" rel="noopener">Time Series ↗</a>
-            <a href="https://github.com/Calvin-Gacheru/Uber-Data-Analysis-2024" target="_blank" rel="noopener">Uber Analysis ↗</a>
-          </div>
-        </article>
-
-        <article class="pcard">
-          <div class="pcard-header">
-            <i class="fas fa-heart pcard-icon"></i>
-            <div class="pcard-links">
-              <span class="live-badge"><span class="live-dot"></span>Live</span>
-              <a href="https://github.com/Calvin-Gacheru/Valen_Time_Love" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-              <a href="https://calvin-gacheru.github.io/Valen_Time_Love/" target="_blank" rel="noopener" aria-label="Live Site"><i class="fas fa-arrow-up-right-from-square"></i></a>
-            </div>
-          </div>
-          <h3 class="pcard-title">Valen Time Love</h3>
-          <p class="pcard-desc">Customisable SaaS-style web app framework generating dynamic, shareable event proposals and booking pages on demand for clients.</p>
-          <div class="pcard-tags">
-            <span>JavaScript</span><span>HTML/CSS</span><span>SaaS</span><span>Dynamic Templates</span>
-          </div>
-        </article>
-
-        <article class="pcard">
-          <div class="pcard-header">
-            <i class="fas fa-solid fa-globe pcard-icon"></i>
-            <div class="pcard-links">
-              <span class="live-badge"><span class="live-dot"></span>Live</span>
-              <a href="https://github.com/Calvin-Gacheru/WebsiteBrochure" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-              <a href="https://calvin-gacheru.github.io/WebsiteBrochure/" target="_blank" rel="noopener" aria-label="Live Site"><i class="fas fa-arrow-up-right-from-square"></i></a>
-            </div>
-          </div>
-          <h3 class="pcard-title">WebCraft - Website Brochure</h3>
-          <p class="pcard-desc">A modern, responsive website brochure template designed for easy customization and deployment across various business needs.</p>
-          <div class="pcard-tags">
-            <span>Python</span><span>HTML/CSS</span><span>Javascript</span>
-          </div>
-        </article>
-
-        <article class="pcard">
-          <div class="pcard-header">
-            <i class="fas fa-book pcard-icon"></i>
-            <div class="pcard-links">
-              <a href="https://github.com/Calvin-Gacheru/Behavioural-Explainer/" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            </div>
-          </div>
-          <h3 class="pcard-title">Behavioural Explainer</h3>
-          <p class="pcard-desc">A RAG System for Psychological Framework Analysis. It is a  production-grade Python RAG system that analyzes human interactions by retrieving and synthesizing real psychological frameworks. No advice. No platitudes. Pure structural analysis.</p>
-          <div class="pcard-tags">
-            <span>RAG</span><span>Python</span><span>Shell</span><span>Docker</span><span>LLM Analysis</span><span>Vector DBs</span>
-          </div>
-        </article>
-
+        <!-- Exploratory Data Analysis -->
         <article class="pcard">
           <div class="pcard-header">
             <i class="fas fa-solid fa-compass pcard-icon"></i>
@@ -494,8 +441,113 @@
             <span>Python</span><span>PowerBI</span><span>Pandas</span><span>Data Visualization</span>
           </div>
         </article>
-
       </div>
+
+      <!-- Web Applications & Corporate Sites -->
+      <h3 class="portfolio-category-heading" style="margin-top: 3rem; margin-bottom: 1rem;">Web Applications & Corporate Sites</h3>
+      <div class="portfolio-grid">
+        <!-- BikBat Insurance -->
+          <article class="portfolio-card reveal" data-category="Corporate">
+            <div class="portfolio-card__preview">
+              <div class="portfolio-card__screen">
+                <iframe
+                  src="https://bikbatinsurance.com"
+                  loading="lazy"
+                  title="Bikbat Insurance website preview"
+                  scrolling="no"
+                  tabindex="-1"
+                ></iframe>
+                <div class="portfolio-card__overlay">
+                  <a href="https://bikbatinsurance.com" target="_blank" rel="noopener" class="btn btn--primary btn--sm">
+                    View Live Site ↗
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-card__info">
+              <span class="portfolio-card__tag">Corporate</span>
+              <h3>Bikbat Insurance</h3>
+              <p>A full corporate brochure site with service listings, contact forms, and trust-building content for an insurance provider.</p>
+            </div>
+          </article>  
+
+          <!-- Arcade Kenya -->
+          <article class="portfolio-card reveal" data-category="Interactive">
+            <div class="portfolio-card__preview">
+              <div class="portfolio-card__screen">
+                <iframe
+                  src="https://calvin-gacheru.github.io/ArcadeKenya/"
+                  loading="lazy"
+                  title="Arcade Kenya website preview"
+                  scrolling="no"
+                  tabindex="-1"
+                ></iframe>
+                <div class="portfolio-card__overlay">
+                  <a href="https://calvin-gacheru.github.io/ArcadeKenya/" target="_blank" rel="noopener" class="btn btn--primary btn--sm">
+                    View Live Site ↗
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-card__info">
+              <span class="portfolio-card__tag">Interactive</span>
+              <h3>Arcade Kenya</h3>
+              <p>A vibrant, animated interactive site built for an entertainment venue — rich visuals, smooth transitions, and strong brand identity.</p>
+              <a href="https://github.com/Calvin-Gacheru/ArcadeKenya" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+          </article>
+
+          <!-- Valen Time Love (Preview) -->
+          <article class="portfolio-card reveal" data-category="Web App">
+            <div class="portfolio-card__preview">
+              <div class="portfolio-card__screen">
+                <iframe
+                  src="https://calvin-gacheru.github.io/Valen_Time_Love/"
+                  loading="lazy"
+                  title="Valen Time Love web app preview"
+                  scrolling="no"
+                  tabindex="-1"
+                ></iframe>
+                <div class="portfolio-card__overlay">
+                  <a href="https://calvin-gacheru.github.io/Valen_Time_Love/" target="_blank" rel="noopener" class="btn btn--primary btn--sm">
+                    View Live Site ↗
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-card__info">
+              <span class="portfolio-card__tag">Custom Web App</span>
+              <h3>Valen Time Love</h3>
+              <p>A bespoke custom web application with personalised user experiences — proof that we build beyond templates when your vision demands it.</p>
+            </div>
+          </article>
+
+        <!-- WebCraft - Website Brochure -->
+        <article class="portfolio-card reveal" data-category="Business">
+          <div class="portfolio-card__preview">
+            <div class="portfolio-card__screen">
+              <iframe
+                src="https://calvin-gacheru.github.io/WebsiteBrochure/"
+                loading="lazy"
+                title="WebCraft - Website Brochure preview"
+                scrolling="no"
+                tabindex="-1"
+              ></iframe>
+              <div class="portfolio-card__overlay">
+                <a href="https://calvin-gacheru.github.io/WebsiteBrochure/" target="_blank" rel="noopener" class="btn btn--primary btn--sm">
+                  View Live Site ↗
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-card__info">
+            <span class="portfolio-card__tag">Business</span>
+              <h3>WebCraft - Website Brochure</h3>
+              <p>A modern, responsive website brochure template designed for easy customization and deployment across various business needs.</p>
+          </div>
+        </article>
+      </div>
+
     </div>
   </section>
 

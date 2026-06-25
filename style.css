@@ -607,10 +607,12 @@ button { cursor: pointer; border: none; background: none; }
   display: flex; flex-direction: column; gap: 0.75rem;
   transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
 }
-.pcard:hover {
-  transform: translateY(-4px);
-  border-color: var(--border-h);
-  box-shadow: 0 16px 40px rgba(0,0,0,0.4), 0 0 30px rgba(79,172,254,0.07);
+@media (hover: hover) {
+  .pcard:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-h);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.4), 0 0 30px rgba(79,172,254,0.07);
+  }
 }
 .pcard.featured { border-color: rgba(79,172,254,0.2); }
 
@@ -657,6 +659,101 @@ button { cursor: pointer; border: none; background: none; }
   transition: opacity var(--transition);
 }
 .pcard-extra-links a:hover { opacity: 0.7; text-decoration: underline; }
+
+
+/* ═══════════════════════════════════════════════════
+   PORTFOLIO
+═══════════════════════════════════════════════════ */
+.portfolio {
+  padding: 120px 0;
+}
+
+.portfolio__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.portfolio-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  transition: var(--transition);
+}
+.portfolio-card:hover {
+  border-color: var(--border-gold);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card), var(--shadow-glow);
+}
+
+.portfolio-card__preview {
+  height: 240px;
+  overflow: hidden;
+  position: relative;
+  background: var(--bg-3);
+}
+
+.portfolio-card__screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.portfolio-card__screen iframe {
+  width: 200%;
+  height: 200%;
+  transform: scale(0.5);
+  transform-origin: top left;
+  border: none;
+  pointer-events: none;
+  display: block;
+}
+
+.portfolio-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(12, 12, 11, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition);
+  backdrop-filter: blur(4px);
+}
+.portfolio-card:hover .portfolio-card__overlay { opacity: 1; }
+
+.portfolio-card__info {
+  padding: 24px;
+}
+
+.portfolio-card__tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: var(--gold-dim);
+  padding: 3px 10px;
+  border-radius: 100px;
+  margin-bottom: 12px;
+}
+
+.portfolio-card__info h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.portfolio-card__info p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  font-weight: 300;
+}
 
 /* ─────────────────────────────────────────────
   CERTIFICATIONS
@@ -957,13 +1054,15 @@ button { cursor: pointer; border: none; background: none; }
     flex-direction: column;
     justify-content: center;
     align-items: center; 
+    font-size: 1rem; padding: 0.75rem 1.5rem; 
     gap: 2rem;
     padding: 2rem 0;
     padding-top: var(--nav-h); /* Prevents links from hiding under the navbar */
 
     /* Hidden state */
     opacity: 0; 
-    visibility: var(--transition);
+    visibility: hidden;
+    pointer-events: none;
     transform: opacity var(--transition), transform var(--transition); 
     transition: all var(--transition);
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
@@ -974,10 +1073,9 @@ button { cursor: pointer; border: none; background: none; }
     opacity: 1; 
     visibility: visible; 
     transform: translateY(0); 
+    pointer-events: auto;
   }
   
-  .nav-link { font-size: 1rem; padding: 0.75rem 1.5rem; }
-
   .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .about-image-wrap { order: -1; }
   .about-image-frame { width: 220px; height: 270px; margin: 0 auto; }
