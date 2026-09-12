@@ -1,83 +1,90 @@
 # CALVIN GACHERU MWANGI
+**Data Scientist | AI Engineer | Data Analyst**
 
+**Location:** Nairobi, Kenya
+**Email:** calvin.g.mwangi@gmail.com
+**LinkedIn:** [linkedin.com/in/calvin-gacheru-057672281](https://ke.linkedin.com/in/calvin-gacheru-057672281)
+**GitHub:** [github.com/Calvin-Gacheru](https://github.com/Calvin-Gacheru)
 
-Email: calvin.g.mwangi@gmail.com | Nairobi, Kenya
+---
 
-GitHub: https://github.com/Calvin-Gacheru
+## PROFESSIONAL SUMMARY
+Results-driven Data Science and Analytics student specializing in the complete machine learning lifecycle, from data engineering and model training to robust cloud deployment. Proven ability to build and ship production-ready Agentic AI systems, RAG architectures, and predictive machine learning models. Adept at bridging the gap between raw data and scalable, functional software, delivering end-to-end commercial solutions with a strong focus on automation, MLOps, and actionable business intelligence.
 
-LinkedIn: https://www.linkedin.com/in/calvin-gacheru-057672281/
-
-Portfolio: https://calvin-gacheru.github.io/MyPortfolio/
-
-## PROFESSIONAL PROFILE
-
-Data Scientist, AI Engineer, and Full-Stack Developer specializing in the complete software lifecycle. Focused on transitioning machine learning models and AI systems from local environments to production-ready deployments. Expertise in building robust Retrieval-Augmented Generation (RAG) architectures, training predictive algorithms, and engineering enterprise ETL pipelines.
+---
 
 ## EDUCATION
+**Bachelor of Science in Data Science & Analytics** 
+*United States International University — Africa (USIU-Africa)* | Nairobi, Kenya
+*Expected Graduation: 2027 (Currently Year 4 of 4)*
 
-**BSc. Data Science & Analytics**
-United States International University — Africa (USIU-Africa), Nairobi, Kenya
-Expected Graduation: 2027
+---
 
-## TECHNICAL PROFICIENCIES
+## TECHNICAL SKILLS
+*   **Programming Languages:** Python (Advanced), SQL, R, Bash, HTML/CSS/JavaScript
+*   **Machine Learning & AI Stack:** scikit-learn, Pandas, NumPy, statsmodels, NLP, Time Series Analysis, Predictive Analytics
+*   **Generative AI & LLMs:** LangChain, LangGraph, RAG Systems, OpenAI API, Groq LLM, Agentic Orchestration, Vector Databases (Qdrant)
+*   **Data Engineering & Analytics:** ETL Pipelines, Exploratory Data Analysis, Data Visualization, Power BI, Matplotlib
+*   **Infrastructure & MLOps:** Docker, Kubernetes, CI/CD (GitHub Actions), Linux/Fedora, Git/GitHub, PostgreSQL, Redis
+*   **Web Frameworks:** FastAPI, Flask, Django
+*   **Languages:** English (Native), Swahili (Native)
 
-* **Programming Languages:** Python, SQL, JavaScript, HTML5/CSS3, Bash, R
-* **Artificial Intelligence & Machine Learning:** Large Language Models (Llama 3.1, Groq), LangChain, LangGraph, Agentic Orchestration, RAG Systems, Scikit-learn (Random Forest, XGBoost), NLP, Time Series Analysis, Predictive Analytics, Explainable AI (SHAP)
-* **Data Engineering & Infrastructure:** Vector Databases (Qdrant), Docker, Kubernetes, Git/GitHub Actions (CI/CD), PostgreSQL, SQLite, Redis, Pandas, NumPy, Astral UV
-* **Web Frameworks & OS:** FastAPI, Flask, Django, Streamlit, Linux/Fedora
+---
 
 ## PROFESSIONAL EXPERIENCE
 
-**BikBat Insurance Agency** | Freelance Web Developer
-2026
+**Data Science Virtual Intern** | *ProdigyInfoTech* | 2025
+*   Executed 4 end-to-end data science projects encompassing exploratory data analysis, predictive modeling, customer churn analytics, and NLP sentiment analysis.
+*   Developed reproducible data workflows and documented analytical insights derived from real-world datasets, emphasizing data quality and model interpretability.
 
-* Engineered, developed, and deployed a complete corporate web presence for a commercial insurance client.
-* Managed the full deployment lifecycle, including domain registration, DNS configuration, and cloud hosting infrastructure.
+**Freelance Full-Stack Developer** | *BikBat Insurance Agency* | 2026
+*   Engineered and launched a comprehensive corporate web platform end-to-end for a commercial insurance client.
+*   Managed the complete deployment lifecycle, including domain configuration, DNS management, and secure cloud hosting.
 
-**ProdigyInfoTech** | Data Science Virtual Intern
-2025
+---
 
-* Executed four comprehensive data science projects utilizing real-world datasets.
-* Performed exploratory data analysis, built predictive models, conducted customer churn analytics, and implemented NLP-based sentiment analysis with fully reproducible workflows.
+## SELECTED DATA SCIENCE & AI PROJECTS
 
-## KEY ENGINEERING PROJECTS
-
-**MySaidi - AI Productivity Assistant**
-
-* Architected a full-stack Progressive Web App (PWA) operating on a decoupled browser-to-REST API architecture.
-* Integrated a LangGraph-powered AI agent using Groq LLMs to manage user schedules, tasks, and habits via natural language intent parsing.
-* Built the backend with FastAPI and PostgreSQL, and designed a mobile-optimized vanilla JavaScript frontend secured with JWT authentication.
+**MySaidi - AI Productivity Assistant (Agentic AI & Web App)**
+*   Architected a full-stack Progressive Web App (PWA) that leverages natural language processing to manage user schedules and habits.
+*   Designed a decoupled browser-to-REST API utilizing FastAPI and a PostgreSQL database.
+*   Integrated a LangGraph-powered AI agent driven by Groq LLMs to parse intents and dynamically query/modify user data via bound tool calling.
 
 **Uber Price Prediction & Production MLOps Pipeline**
+*   Engineered an enterprise-grade MLOps architecture to predict ride prices using an optimized Random Forest Regressor.
+*   Automated the machine learning lifecycle through a GitHub Actions CI/CD pipeline and multi-container Docker orchestration.
+*   Deployed the model via a robust FastAPI REST backend with Pydantic validation, serving predictions to an interactive Streamlit UI.
 
-* Engineered an end-to-end machine learning pipeline predicting ride prices using an optimized Random Forest Regressor (Cross-Validation Average R² Score: 0.9854).
-* Prevented data leakage by bundling transformations into Scikit-Learn pipelines.
-* Containerized the ecosystem using Docker and orchestrated automated CI/CD workflows via GitHub Actions.
-* Served the inference model through a FastAPI REST backend with Pydantic validation, accessed via an interactive Streamlit UI.
+**Diabetes Risk Screening Tool (Predictive Analytics)**
+*   Developed a recall-optimized diagnostic screening pipeline utilizing an XGBoost classifier, addressing severe class imbalance via SMOTE and algorithmic class weighting.
+*   Achieved an 88% recall rate for minority classes, prioritizing the minimization of false negatives in medical diagnostics.
+*   Deployed the pipeline as a Streamlit application featuring real-time automated feature engineering, binning, and data scaling.
 
-**Behavioural Explainer - RAG System**
+**Maternal Risk Detection System (Explainable AI)**
+*   Built a predictive system for maternal health risks (Preeclampsia, Gestational Diabetes, Anemia) utilizing real-time patient vitals.
+*   Integrated SHAP (SHapley Additive exPlanations) to provide transparent model interpretability for clinical decision-making.
+*   Implemented automated task scheduling (APScheduler) and third-party API integration (Africa's Talking) to deliver SMS appointment reminders and wellness tips.
 
-* Developed a production-grade Python Retrieval-Augmented Generation (RAG) system for psychological framework analysis.
-* Built a document processing pipeline utilizing PyMuPDF for text extraction and chunking, storing vector embeddings in a Qdrant database.
-* Executed local LLM analysis via Ollama (Llama 3.1) to synthesize structural breakdowns of human interaction scenarios without offering generic advice.
-* Packaged the tool with a custom Typer Command Line Interface and Docker.
+**Behavioural Explainer (RAG Architecture)**
+*   Constructed a production-grade Retrieval-Augmented Generation (RAG) system to analyze complex psychological framework scenarios.
+*   Engineered a document ingestion pipeline using PyMuPDF and text chunking, storing embeddings in a Qdrant vector database.
+*   Integrated local LLMs (Ollama, Llama 3.1) and developed a Command Line Interface (CLI) tool using Typer within a containerized Docker environment.
 
-**Maternal Risk Detection System**
+**Lung Cancer Survival Prediction (Survival Analysis & Data Mining)**
+*   Collaborated on a machine learning pipeline extracting, transforming, and analyzing clinical/treatment records to estimate survival outcomes.
+*   Engineered advanced clinical features, including temporal tracking and comorbidity scoring, to feed a Random Forest model.
+*   Developed an interactive Plotly dashboard to serve real-time survival probability estimations and clinical visual insights.
 
-* Trained an XGBoost and Random Forest ensemble model to classify maternal health risk tiers from patient vitals and historical data.
-* Implemented real-time outlier detection and SHAP explainability to map feature influence on clinical predictions.
-* Developed a feedback loop automating SMS appointment reminders and wellness tips using the Africa's Talking API and APScheduler.
+**Stroke Prediction Using Bayesian Networks (Probabilistic Modeling)**
+*   Developed a discrete Directed Acyclic Graph (DAG) Bayesian Network using `pgmpy` to estimate stroke risk via probabilistic reasoning.
+*   Performed exact inference via Variable Elimination and structural evaluation using BIC and BDeu scoring.
 
-**Interactive Web Platforms (Arcade Kenya & Valen Time Love)**
+**Twitter Entity Sentiment Analysis (NLP)**
+*   Built a natural language processing pipeline to detect public sentiment towards specific brands on X (formerly Twitter).
+*   Utilized GridSearchCV for extensive hyperparameter tuning, achieving a 93% F1-score with the optimal classifier, and deployed the solution via Streamlit.
 
-* Developed "Arcade Kenya," a highly interactive, animated platform utilizing HTML5 Canvas and CSS3 for an entertainment venue.
-* Built "Valen Time Love," a customizable SaaS-style web application framework generating dynamic, shareable event proposals.
-
-**ETL Data Engineering**
-
-* Engineered custom ETL processes handling structured datasets for automated extraction, transformation, and loading, complete with validation and logging mechanisms.
+---
 
 ## CERTIFICATIONS
-
-* **Building AI Agents using LangGraph** – Simplilearn
-* **Data Science Virtual Internship** – ProdigyInfoTech
+*   **Data Science Virtual Internship** – *ProdigyInfoTech (2025)*
+*   **Building AI Agents using LangGraph** – *Simplilearn*
