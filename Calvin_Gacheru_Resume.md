@@ -1,85 +1,122 @@
-# CALVIN GACHERU MWANGI
+# Calvin Gacheru Mwangi
 
-Email: calvin.g.mwangi@gmail.com | Nairobi, Kenya
+**Data Analyst · Data Scientist · AI Engineer**
 
-GitHub: https://github.com/Calvin-Gacheru
+📍 Nairobi, Kenya · ✉️ [calvin.g.mwangi@gmail.com](mailto:calvin.g.mwangi@gmail.com) · 🔗 [LinkedIn](https://ke.linkedin.com/in/calvin-gacheru-057672281) · 💻 [GitHub](https://github.com/Calvin-Gacheru)  . 💼 [Portfolio](https://calvin-gacheru.github.io/MyPortfolio/)
 
-LinkedIn: https://www.linkedin.com/in/calvin-gacheru-057672281/
-
-Portfolio: https://calvin-gacheru.github.io/MyPortfolio/
+`Python` `LangChain` `LangGraph` `scikit-learn` `FastAPI` `Docker` `PostgreSQL` `SQL` `RAG` `MLOps`
 
 ---
 
-## PROFESSIONAL SUMMARY
+## Summary
 
-Data Scientist, AI Engineer, and full-stack developer specializing in the complete software lifecycle. Experienced in building Retrieval-Augmented Generation (RAG) systems, training predictive machine learning models, and managing cloud deployments. Focuses on shipping scalable, production-ready solutions and enterprise ETL pipelines end-to-end.
-
----
-
-## TECHNICAL SKILLS
-
-* **Languages:** Python, SQL, HTML/CSS/JavaScript, Bash, R
-* **AI & Machine Learning:** scikit-learn, LangChain, LangGraph, RAG, Agentic Orchestration, Vector DBs (Qdrant), OpenAI API, Groq LLMs, Pandas, NumPy, NLP, Time Series Analysis
-* **Infrastructure & Deployment:** Docker, Kubernetes, Git/GitHub Actions (CI/CD), Linux/Fedora, Render
-* **Web Frameworks & Databases:** FastAPI, Flask, Django, PostgreSQL, SQLite, Redis
+Fourth-year Data Science & Analytics student who ships production software, not just notebooks. I've built a behavioral RAG chatbot, an agentic AI productivity assistant, and predictive machine learning models — plus full-stack platforms taken from domain registration to live deployment. I own the complete lifecycle: cloud deployments, ETL pipelines, CI/CD, and security-hardened infrastructure. I don't just train models — I ship them into production.
 
 ---
 
-## EXPERIENCE
+## Core Skills
 
-**BikBat Insurance Agency** | Freelance Web Developer | 2026
+**Languages & Frameworks**
+Python · SQL · HTML / CSS / JS · R · Bash · Linux (Fedora)
 
-* Engineered and launched a complete corporate brochure website for a commercial client.
-* Managed end-to-end deployment, including domain registration, DNS configuration, and cloud hosting.
+**AI / Machine Learning**
+scikit-learn · LangChain · LangGraph · RAG Architectures · OpenAI API · Vector Databases · Agentic Orchestration · NLP · Time Series Analysis · Predictive Analytics · NumPy · Pandas · statsmodels
 
-**ProdigyInfoTech** | Data Science Virtual Intern | 2025
+**Engineering & Infrastructure**
+Docker · Kubernetes · FastAPI · Flask · Django · PostgreSQL · Redis · Git / GitHub · CI/CD (GitHub Actions) · Render
 
-* Completed 4 end-to-end data science projects utilizing real-world datasets.
-* Executed exploratory data analysis, predictive modeling, customer churn analytics, and sentiment analysis with fully documented, reproducible workflows.
-
----
-
-## KEY PROJECTS
-
-**MySaidi - AI Productivity Assistant**
-
-* Developed a full-stack Progressive Web App (PWA) using FastAPI, PostgreSQL, and a vanilla JavaScript frontend.
-* Integrated LangGraph and Groq LLMs to create an agentic AI chat assistant capable of managing schedules, tasks, and habits via natural language.
-* Implemented secure JWT authentication and a responsive, mobile-optimized user interface.
-
-**Uber Price Prediction & Production MLOps Pipeline**
-
-* Built an enterprise-grade ML pipeline predicting Uber ride prices using an optimized Random Forest Regressor.
-* Designed a multi-container orchestration system using Docker and automated CI/CD workflows via GitHub Actions.
-* Served the inference model through a FastAPI REST backend with Pydantic validation and an interactive Streamlit UI.
-
-**Behavioural Explainer RAG System**
-
-* Engineered a production-grade Retrieval-Augmented Generation (RAG) tool analyzing human interactions using psychological frameworks.
-* Built an ingestion pipeline for PDF documents utilizing PyMuPDF and stored vector embeddings in Qdrant.
-* Utilized Llama 3.1 and Ollama for local LLM inference, operated via a custom Command Line Interface (Typer).
-
-**Maternal Risk Detection System**
-
-* Trained predictive models to classify maternal health risks from patient vital indicators.
-* Integrated SHAP (Explainable AI) to flag real-time outliers and build clinical trust in the model's predictions.
-* Automated patient SMS reminders via Africa's Talking API and APScheduler, managing records in a local SQLite database.
-
-**ETL Data Engineering & Custom Web Apps**
-
-* **ETL Pipelines:** Built custom processes for automated data extraction, transformation, and loading using Python and SQL.
-* **Arcade Kenya & Valen Time Love:** Deployed interactive platforms and custom web applications utilizing HTML5 Canvas, CSS3, and JavaScript.
+**Other**
+ETL Pipelines · Exploratory Data Analysis · Power BI · Streamlit · Cloud Security (TLS/SSL, IAM/RBAC)
 
 ---
 
-## EDUCATION
+## Experience
 
-**United States International University — Africa (USIU-Africa)** | Nairobi, Kenya
-BSc. Data Science & Analytics | Expected Graduation: 2027
+### BikBat Insurance Agency — Freelance Web Developer *(Live Client · 2026)*
+- Delivered the full business website end-to-end for a live client — domain registration, DNS configuration, and cloud hosting — as a standalone engagement from brief to production.
+- Built a brochure site with service listings and trust-building content designed to convert visitors into leads. → [bikbatinsurance.com](https://bikbatinsurance.com)
+
+### ProdigyInfoTech — Data Science Virtual Internship *(2025)*
+- Completed four end-to-end data science projects spanning exploratory analysis, predictive modeling, customer churn analytics, and sentiment analysis on real-world datasets.
+- Produced documented, reproducible analyses for every task: [EDA](https://github.com/Calvin-Gacheru/PRODIGY_DS_01) · [Predictive Analytics](https://github.com/Calvin-Gacheru/PRODIGY_DS_02) · [Customer Churn](https://github.com/Calvin-Gacheru/PRODIGY_DS_03) · [Sentiment Analysis](https://github.com/Calvin-Gacheru/PRODIGY_DS_04)
 
 ---
 
-## CERTIFICATIONS
+## Featured Projects
 
-* **Building AI Agents using LangGraph** – Simplilearn (Focus on stateful orchestration and LLM applications)
-* **Data Science Virtual Internship** – ProdigyInfoTech
+### MySaidi — AI Productivity Assistant
+Full-stack AI assistant that manages tasks, calendars, and habits through natural conversation. A LangGraph agent running on Groq parses user intent and directly edits the user's schedule. Shipped as a secure, installable Progressive Web App with JWT authentication.
+**Stack:** Python · FastAPI · LangGraph · Groq LLM · PostgreSQL · JWT Auth · PWA
+🔗 [github.com/Calvin-Gacheru/MySaidi](https://github.com/Calvin-Gacheru/MySaidi)
+
+### Uber Price Prediction & MLOps Pipeline
+Production-grade MLOps pipeline predicting Uber ride prices with a tuned Random Forest model. Served through a FastAPI + Pydantic backend behind a Streamlit UI, containerized and shipped with automated CI/CD — a repeatable path from raw data to deployment.
+**Stack:** Python · scikit-learn · FastAPI · Docker · Streamlit · GitHub Actions
+🔗 [github.com/Calvin-Gacheru/Uber-Price-Prediction](https://github.com/Calvin-Gacheru/Uber-Price-Prediction)
+
+### AI-Powered Knowledge Retrieval System
+Full-stack RAG application that streamlines technical support by centralizing documentation. Ingests and embeds PDFs into pgvector, then uses Groq via LangChain to generate context-aware answers — Dockerized end-to-end with a built-in QA feedback loop.
+**Stack:** Python · FastAPI · LangChain · Groq LLM · pgvector · Docker
+🔗 [github.com/Calvin-Gacheru/AI-KNOWLEDGE-RETRIEVAL-SYSTEM](https://github.com/Calvin-Gacheru/AI-KNOWLEDGE-RETRIEVAL-SYSTEM)
+
+### Diabetes Risk Screening Tool
+Recall-optimized screening pipeline for early diabetes detection, tackling severe class imbalance with SMOTE and a class-weighted XGBoost classifier. **Achieves 88% recall** and ships as a Streamlit app with live feature engineering on raw clinical inputs.
+**Stack:** Python · XGBoost · SMOTE · scikit-learn · Streamlit
+🔗 [github.com/Calvin-Gacheru/Diabetes-Prediction](https://github.com/Calvin-Gacheru/Diabetes-Prediction)
+
+### Twitter Entity Sentiment Analysis
+NLP pipeline tracking public sentiment toward brands from X (Twitter) posts in real time. Tuned the classifier via GridSearchCV to a **93% F1-score** and shipped it as a live Streamlit app for on-demand brand monitoring.
+**Stack:** Python · NLP · scikit-learn · GridSearchCV · Streamlit
+🔗 [github.com/Calvin-Gacheru/Twitter-Tweets-Sentimental-Analysis](https://github.com/Calvin-Gacheru/Twitter-Tweets-Sentimental-Analysis)
+
+### Secure Cloud Storage Architecture
+Hardened MinIO object-storage environment in Docker demonstrating enterprise security controls: TLS-encrypted transport, RBAC via custom IAM policies, and server-side encryption with a KMS key. Validated against a synthetic dataset of **100,000 corporate records**.
+**Stack:** Python · MinIO · Docker · TLS/SSL · IAM/RBAC
+🔗 [github.com/Calvin-Gacheru/Secure-Cloud-Storage](https://github.com/Calvin-Gacheru/Secure-Cloud-Storage)
+
+---
+
+## Additional Projects
+
+| Project | What it does | Stack | Link |
+|---|---|---|---|
+| **Behavioural Explainer** | Local-first RAG system analyzing human-interaction scenarios through a psychological lens | Ollama, Llama 3.1, Qdrant, RAG | [Repo](https://github.com/Calvin-Gacheru/Behavioural-Explainer/) |
+| **Maternal Risk Detection System** | Flags high-risk pregnancies from patient vitals; SHAP explains predictions; automated SMS reminders | Python, SHAP, APScheduler, SQLite, Streamlit | [Repo](https://github.com/Calvin-Gacheru/Maternal-Risk-Detection-System) |
+| **Stroke Prediction Using Bayesian Networks** | Discrete Bayesian Network estimating stroke risk via probabilistic reasoning and exact inference | Python, pgmpy, pandas | [Repo](https://github.com/Calvin-Gacheru/Bayesian-Networks) |
+| **Customer Subscription Prediction** | Predicts bank term-deposit subscriptions; tuned LightGBM reaches 88% recall | Python, LightGBM, Power BI, GridSearchCV | [Repo](https://github.com/Calvin-Gacheru/Predicting-Customer-Subscription) |
+| **Lung Cancer Survival Prediction** | Predicts survival outcomes from clinical records with feature engineering and survival analysis | Python, scikit-learn, lifelines, Plotly | [Repo](https://github.com/Calvin-Gacheru/Predicting-Lung-Cancer-Survival) |
+| **ETL Data Engineering** | Custom ETL pipelines with validation, logging, and scheduling for structured data | Python, SQL, Pandas | [Repo](https://github.com/Calvin-Gacheru/ETL-Pipeline) |
+| **Exploratory Data Analysis** | Cross-dataset analysis surfacing patterns and business-ready insights | Python, Pandas, Power BI, Matplotlib | [Repo](https://github.com/Calvin-Gacheru/Business-Intelligence-And-Visualization) |
+| **Global Air Quality Analysis** | Tracks pollutant trends via OpenAQ API; forecasts AQI with scikit-learn | Python, Pandas, Seaborn, scikit-learn | [Repo](https://github.com/Calvin-Gacheru/Air-Quality-Analysis) |
+| **Arcade Kenya** | Live, multi-game entertainment platform with rich animation and brand identity | JavaScript, HTML/CSS | [Live](https://calvin-gacheru.github.io/ArcadeKenya/) · [Repo](https://github.com/Calvin-Gacheru/ArcadeKenya) |
+| **Valen Time Love** | Bespoke, personalized web application from a custom client brief | JavaScript, HTML/CSS | [Live](https://calvin-gacheru.github.io/Valen_Time_Love/) |
+| **WebCraft — Website Brochure** | Responsive brochure-site template for fast customization and deployment | HTML/CSS/JS | [Live](https://calvin-gacheru.github.io/WebsiteBrochure/) |
+
+---
+
+## Certifications
+
+- **Building AI Agents using LangGraph** — Simplilearn — LangGraph workflows, stateful orchestration, practical agent implementation
+- **Data Science Virtual Internship** — ProdigyInfoTech (2025) — EDA, machine learning, churn analytics, sentiment analysis
+
+---
+
+## Education
+
+**BSc. Data Science & Analytics**
+United States International University — Africa (USIU-Africa)
+Year 4 of 4 · In Progress · Expected Graduation 2027
+
+---
+
+## Soft Skills
+
+Analytical & Critical Thinking · Business-Minded Problem Solving · Cross-Functional Communication · Autonomous & Fast Learning · Ownership & End-to-End Delivery · Stakeholder Management
+
+## Languages
+
+English (Native) · Swahili (Native)
+
+## Interests
+
+Music · Linux / Systems Tinkering · Kaggle & Data Competitions · Reading (Tech & Non-Fiction) · Chess & Strategy Games
