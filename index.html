@@ -1,896 +1,691 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Calvin Gacheru Mwangi — Data Scientist, AI Developer & Full-Stack Web. Ships real things: RAG chatbots, live game platforms, ML models." />
-  <meta name="keywords" content="Data Scientist Nairobi, AI Developer Kenya, RAG Chatbot, Machine Learning Engineer, Full Stack Developer Kenya">
-  <meta name="author" content="Calvin Gacheru Mwangi">
-  <link rel="canonical" href="https://yourdomain.com" />
-  <title>Calvin Gacheru Mwangi</title>
+  <title>Calvin Gacheru Mwangi — Data Scientist &amp; AI Engineer</title>
+  <meta name="description" content="Calvin Gacheru Mwangi — Data Scientist by training, AI Engineer by obsession. Builds agentic AI, RAG systems and production ML from Nairobi, Kenya." />
+  <meta name="keywords" content="Data Scientist Nairobi, AI Engineer Kenya, Agentic AI, LangGraph, RAG, Machine Learning Engineer, MLOps" />
+  <meta name="author" content="Calvin Gacheru Mwangi" />
+  <link rel="canonical" href="https://calvin-gacheru.github.io/MyPortfolio/" />
+  <meta name="theme-color" content="#0A0C0F" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Calvin Gacheru Mwangi — Data Scientist &amp; AI Engineer" />
+  <meta property="og:description" content="Data Scientist by training. AI Engineer by obsession. Agentic AI, RAG and production ML." />
+  <meta property="og:url" content="https://calvin-gacheru.github.io/MyPortfolio/" />
+  <meta property="og:image" content="https://calvin-gacheru.github.io/MyPortfolio/portrait.webp" />
+
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
-  <!-- Fonts -->
+  <!-- Apply saved / system theme before first paint to avoid a flash -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('portfolio-theme');
+        var theme = saved === 'light' || saved === 'dark'
+          ? saved
+          : (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        document.documentElement.dataset.theme = theme;
+      } catch (e) { /* storage blocked — keep default */ }
+      document.documentElement.classList.add('js');
+    })();
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
-
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+  <!-- ═══════════════════════════ ICON SPRITE ═══════════════════════════ -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-2.93 1.41-1.41M17.66 6.34l1.41-1.41M2 12h2M20 12h2M6.34 6.34 4.93 4.93M19.07 19.07l-1.41-1.41"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="14" height="14" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Ambient background the glass surfaces blur -->
+  <div class="ambient" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="ambient-grid"></div>
+  </div>
+
   <!-- ═══════════════════════════ NAVBAR ═══════════════════════════ -->
-  <nav class="navbar" id="navbar">
-    <div class="menu-backdrop"></div>
-    <div class="nav-inner">
-      <!-- <a href="#home" class="nav-logo">
-        <span class="logo-bracket"></span>CGM<span class="logo-bracket"></span>
-      </a> -->
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#home"      class="nav-link" data-section="home">Home</a></li>
-        <li><a href="#about"     class="nav-link" data-section="about">About</a></li>
-        <li><a href="#resume"    class="nav-link" data-section="resume">Resume</a></li>
-        <li><a href="#portfolio" class="nav-link" data-section="portfolio">Portfolio</a></li>
-        <li><a href="#certifications" class="nav-link" data-section="certifications">Certifications</a></li>
-        <li><a href="#contact"   class="nav-link" data-section="contact">Contact</a></li>
-      </ul>
+  <header class="nav" id="nav">
+    <div class="nav-bar">
+      <a href="#home" class="nav-logo" aria-label="Calvin Gacheru Mwangi — back to top">PORTFOLIO<span class="logo-dot" aria-hidden="true"></span></a>
+
+      <nav class="nav-menu" id="nav-menu" aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="#about"          class="nav-link" data-section="about">About</a></li>
+          <li><a href="#work"           class="nav-link" data-section="work">Work</a></li>
+          <li><a href="#projects"       class="nav-link" data-section="projects">Projects</a></li>
+          <li><a href="#experience"     class="nav-link" data-section="experience">Experience</a></li>
+          <li><a href="#certificates"   class="nav-link" data-section="certificates">Certificates</a></li>
+          <li><a href="#contact"        class="nav-link" data-section="contact">Contact</a></li>
+        </ul>
+        <span class="nav-indicator" aria-hidden="true"></span>
+      </nav>
+
       <div class="nav-actions">
-        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode" aria-pressed="false" title="Toggle theme">
-          <i class="fas fa-moon theme-icon theme-icon-moon" aria-hidden="true"></i>
-          <i class="fas fa-sun theme-icon theme-icon-sun" aria-hidden="true"></i>
+        <button class="icon-btn theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode">
+          <svg class="icon theme-icon-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+          <svg class="icon theme-icon-sun" aria-hidden="true"><use href="#i-sun"/></svg>
         </button>
-        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-          <span></span><span></span><span></span>
+        <button class="icon-btn menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+          <svg class="icon icon-menu" aria-hidden="true"><use href="#i-menu"/></svg>
+          <svg class="icon icon-close" aria-hidden="true"><use href="#i-x"/></svg>
         </button>
       </div>
     </div>
-  </nav>
+  </header>
 
-  <!-- ═══════════════════════════ HOME ════════════════════════════ -->
-  <section class="section" id="home">
-    <div class="hero-bg">
-      <div class="hero-grid"></div>
-      <div class="hero-glow glow-1"></div>
-      <div class="hero-glow glow-2"></div>
-    </div>
+  <main id="main">
 
-    <div class="hero-content">
-      <p class="hero-eyebrow"><span class="dot"></span> Available for opportunities</p>
-      <h1 class="hero-name">
-        <span class="line">CALVIN</span>
-        <span class="line accent-line">GACHERU MWANGI</span>
-      </h1>
-      <p class="hero-subtitle">Data Analyst <span class="sep">&bull;</span> Data Scientist <span class="sep">&bull;</span> AI Engineer</p>
-      <div class="hero-cta">
-        <a href="#resume"    class="btn btn-outline">Resume</a>
-        <a href="#portfolio" class="btn btn-outline">Portfolio</a>
-        <a href="Calvin_Gacheru_Resume.pdf" class="btn btn-outline" download>Download Resume</a>
-        <a href="Calvin_Gacheru_CV.pdf" class="btn btn-outline" download>Download CV</a>
+    <!-- ═══════════════════════════ HERO ════════════════════════════ -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <canvas class="hero-field" id="hero-field" aria-hidden="true"></canvas>
+
+      <div class="container hero-inner">
+        <p class="status glass">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>Available for opportunities</span>
+          <span class="status-sep" aria-hidden="true">·</span>
+          <span>Nairobi, KE</span>
+        </p>
+
+        <h1 class="hero-title" id="hero-title">
+          <span class="hero-line">Calvin Gacheru</span>
+          <span class="hero-line hero-line-muted">Mwangi</span>
+        </h1>
+
+        <p class="hero-tagline">
+          Data Scientist by training.<br />
+          AI Engineer by <em class="serif">obsession</em>.
+        </p>
+
+        <p class="hero-lead">
+          I build agentic AI systems, RAG pipelines and production ML — and I ship them, not just notebooks.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#work" class="btn btn-primary magnetic">
+            See selected work
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+          <a href="Calvin_Gacheru_Resume.pdf" class="btn btn-glass magnetic" download>
+            <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>
+            Résumé
+          </a>
+          <a href="Calvin_Gacheru_CV.pdf" class="btn btn-ghost magnetic" download>
+            <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>
+            CV
+          </a>
+        </div>
+
+        <ul class="hero-meta mono" aria-label="Quick facts">
+          <li>BSc Data Science &amp; Analytics ’27</li>
+          <li>Agentic AI · LangGraph · RAG</li>
+          <li>Python · FastAPI · Docker</li>
+        </ul>
       </div>
-    </div>
 
-    <!-- Social sidebar -->
-    <div class="hero-socials">
-      <a href="https://github.com/Calvin-Gacheru" target="_blank" rel="noopener" aria-label="GitHub">
-        <i class="fab fa-github"></i>
+      <a href="#about" class="scroll-cue" aria-label="Scroll to About">
+        <span class="scroll-cue-line" aria-hidden="true"></span>
       </a>
-      <a href="https://ke.linkedin.com/in/calvin-gacheru-057672281" target="_blank" rel="noopener" aria-label="LinkedIn">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-      <a href="https://instagram.com/cmgacheru" target="_blank" rel="noopener" aria-label="Instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="mailto:calvin.g.mwangi@gmail.com" target="_blank" rel="noopener" aria-label="Email">
-        <i class="fas fa-envelope"></i>
-      </a>
-      <span class="social-line"></span>
-    </div>
+    </section>
 
-    <a href="#about" class="scroll-down" aria-label="Scroll to About">
-      <i class="fas fa-chevron-down"></i>
-    </a>
-  </section>
+    <!-- ═══════════════════════════ ABOUT ═══════════════════════════ -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow mono">01 — About</p>
+          <h2 class="section-title" id="about-title">Two disciplines, <em class="serif">one</em> builder.</h2>
+        </header>
 
-  
-  <!-- ═══════════════════════════ ABOUT ═══════════════════════════ -->
-  <section class="section" id="about">
-    <div class="container">
-      <div class="section-tag">02 — About</div>
-      <div class="about-grid">
+        <div class="bento">
 
-        <div class="about-text">
-          <h2 class="section-heading">ABOUT</h2>
-          <p class="about-body">
-            Fourth-year <strong>Data Science &amp; Analytics</strong> student who ships production software, not just notebooks.
-            I've built a behavioral <strong>RAG chatbot</strong>, an agentic <strong>AI productivity assistant</strong>, and predictive <strong>Machine Learning</strong> models — plus full-stack platforms like <strong>Arcade Kenya</strong>, a live multi-game web platform, and <strong>BikBat Insurance</strong>, a client site I took from domain to production.
-            I own the complete lifecycle: <strong>cloud deployments</strong>, ETL pipelines, CI/CD, and security-hardened infrastructure.
-            I don't just train models — I ship them into production.
-          </p>
-
-          <div class="about-meta">
-            <div class="meta-item">
-              <i class="fas fa-envelope"></i>
-              <a href="mailto:calvin.g.mwangi@gmail.com">calvin.g.mwangi@gmail.com</a>
-            </div>
-            <div class="meta-item">
-              <i class="fas fa-location-dot"></i>
-              <span>Nairobi, Kenya</span>
-            </div>
-            <div class="meta-item">
-              <i class="fas fa-graduation-cap"></i>
-              <span>USIU-Africa · BSc Data Science &amp; Analytics</span>
-            </div>
-          </div>
-
-          <div class="about-chips">
-            <span class="chip">Machine Learning</span>
-            <span class="chip">Agentic AI</span>
-            <span class="chip">RAG Systems</span>
-            <span class="chip">Python</span>
-            <span class="chip">LangChain &amp; LangGraph</span>
-            <span class="chip">Docker &amp; MLOps</span>
-            <span class="chip">Cloud Security</span>
-            <span class="chip">ETL Pipelines</span>
-          </div>
-        </div>
-        
-        <div class="about-image-wrap">
-          <div class="about-image-frame">
-            <!-- <div class="portrait-placeholder">
-              <i class="fas fa-user"></i>
-            </div> -->
-            <img src="image.png" alt="Calvin Gacheru Mwangi" class="about-photo" style="width: 100%; height: 100%; object-fit: cover; position: relative; z-index: 10; border-radius: var(--radius);"/>
-            <div class="frame-accent top-left"></div>
-            <div class="frame-accent bottom-right"></div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════ RESUME ══════════════════════════ -->
-  <section class="section" id="resume">
-    <div class="container">
-      <div class="section-tag">03 — Resume</div>
-      <h2 class="section-heading">RESUME</h2>
-
-      <div class="resume-grid">
-
-        <!-- ── Col 1: Skills ── -->
-        <div class="resume-col">
-
-          <div class="resume-card">
-            <h3 class="card-title"><i class="fas fa-code"></i> Languages &amp; Frameworks</h3>
-            <div class="skills-list">
-              <div class="skill-item" data-pct="90">
-                <div class="skill-label"><span>Python</span><span class="pct-label">90%</span></div>
-                <div class="skill-track"><div class="skill-bar"></div></div>
-              </div>
-              <div class="skill-item" data-pct="85">
-                <div class="skill-label"><span>HTML / CSS / JS</span><span class="pct-label">85%</span></div>
-                <div class="skill-track"><div class="skill-bar"></div></div>
-              </div>
-              <div class="skill-item" data-pct="80">
-                <div class="skill-label"><span>SQL</span><span class="pct-label">80%</span></div>
-                <div class="skill-track"><div class="skill-bar"></div></div>
-              </div>
-              <div class="skill-item" data-pct="75">
-                <div class="skill-label"><span>Linux / Fedora</span><span class="pct-label">75%</span></div>
-                <div class="skill-track"><div class="skill-bar"></div></div>
-              </div>
-              <div class="skill-item" data-pct="72">
-                <div class="skill-label"><span>Bash</span><span class="pct-label">72%</span></div>
-                <div class="skill-track"><div class="skill-bar"></div></div>
-              </div>
-              <div class="skill-item" data-pct="70">
-                <div class="skill-label"><span>R</span><span class="pct-label">70%</span></div>
-                <div class="skill-track"><div class="skill-bar"></div></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="resume-card">
-            <h3 class="card-title"><i class="fas fa-robot"></i> AI / ML Stack</h3>
-            <div class="tag-grid">
-              <span class="tag-pill">scikit-learn</span>
-              <span class="tag-pill">LangChain</span>
-              <span class="tag-pill">RAG</span>
-              <span class="tag-pill">OpenAI API</span>
-              <span class="tag-pill">Vector DBs</span>
-              <span class="tag-pill">LangGraph</span>
-              <span class="tag-pill">Pandas</span>
-              <span class="tag-pill">Agentic Orchestration</span>
-              <span class="tag-pill">Time Series Analysis</span>
-              <span class="tag-pill">R</span>
-              <span class="tag-pill">NumPy</span>
-              <span class="tag-pill">statsmodels</span>
-              <span class="tag-pill">NLP</span>
-              <span class="tag-pill">Exploratory Analysis</span>
-              <span class="tag-pill">ETL Pipelines</span>
-              <span class="tag-pill">Predictive Analytics</span>
-            </div>
-          </div>
-
-          <div class="resume-card">
-            <h3 class="card-title"><i class="fas fa-server"></i> Stack</h3>
-            <div class="tag-grid">
-              <span class="tag-pill">Docker</span>
-              <span class="tag-pill">Kubernetes</span>
-              <span class="tag-pill">Flask</span>
-              <span class="tag-pill">fastAPI</span>
-              <span class="tag-pill">Render</span>
-              <span class="tag-pill">Git / GitHub</span>
-              <span class="tag-pill">PostgreSQL</span>
-              <span class="tag-pill">Redis</span>
-              <span class="tag-pill">Django</span>
-              <span class="tag-pill">Linux</span>
-            </div>
-          </div>
-
-          <div class="resume-card">
-            <h3 class="card-title"><i class="fas fa-language"></i> Languages</h3>
-            <div class="skills-list">
-              <div class="skill-item" data-pct="100">
-                <div class="skill-label"><span>English</span><span class="pct-label">Native</span></div>
-                <div class="skill-track"><div class="skill-bar"></div></div>
-              </div>
-              <div class="skill-item" data-pct="100">
-                <div class="skill-label"><span>Swahili</span><span class="pct-label">Native</span></div>
-                <div class="skill-track"><div class="skill-bar"></div></div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- ── Col 2: Experience + Education + Hobbies ── -->
-        <div class="resume-col">
-
-          <div class="resume-card">
-            <h3 class="card-title"><i class="fas fa-briefcase"></i> Experience</h3>
-            <div class="timeline">
-
-              <div class="tl-item">
-                <div class="tl-dot"></div>
-                <div class="tl-body">
-                  <div class="tl-header">
-                    <span class="tl-date">2025</span>
-                    <span class="tl-badge intern">Internship</span>
-                  </div>
-                  <h4 class="tl-title">ProdigyInfoTech — Virtual Internship</h4>
-                  <p class="tl-desc">Completed 4 end-to-end data science projects spanning exploratory analysis, visualisation, and predictive modelling on real-world datasets with documented, reproducible analyses.</p>
-                  <div class="tl-links-row">
-                    <a href="https://github.com/Calvin-Gacheru/PRODIGY_DS_01" target="_blank" rel="noopener" class="tl-link">EDA</a>
-                    <a href="https://github.com/Calvin-Gacheru/PRODIGY_DS_02" target="_blank" rel="noopener" class="tl-link">Predictive Analytics</a>
-                    <a href="https://github.com/Calvin-Gacheru/PRODIGY_DS_03" target="_blank" rel="noopener" class="tl-link">Predicting Customer Churn</a>
-                    <a href="https://github.com/Calvin-Gacheru/PRODIGY_DS_04" target="_blank" rel="noopener" class="tl-link">Sentiment Analysis</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="tl-item">
-                <div class="tl-dot"></div>
-                <div class="tl-body">
-                  <div class="tl-header">
-                    <span class="tl-date">2026</span>
-                    <span class="tl-badge live">Live Client</span>
-                  </div>
-                  <h4 class="tl-title">BikBat Insurance Agency</h4>
-                  <p class="tl-desc">Built and launched the full business website end-to-end — domain, DNS, and cloud hosting.</p>
-                  <a href="https://bikbatinsurance.com" target="_blank" rel="noopener" class="tl-link">bikbatinsurance.com ↗</a>
-                </div>
-              </div>
-
-
-
-            </div>
-          </div>
-
-          <div class="resume-card">
-            <h3 class="card-title"><i class="fas fa-graduation-cap"></i> Education</h3>
-            <div class="edu-item">
-              <div class="edu-uni">United States International University — Africa</div>
-              <div class="edu-degree">BSc. Data Science &amp; Analytics</div>
-              <div class="edu-meta-row">
-                <span class="edu-status"><span class="status-dot"></span> Year 4 of 4 · In Progress</span>
-                <span class="edu-year">Expected Graduation · 2027</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="resume-card">
-            <h3 class="card-title"><i class="fas fa-brain"></i> Soft Skills</h3>
-            <ul class="tag-list">
-              <li>Analytical &amp; Critical Thinking</li>
-              <li>Business-Minded Problem Solving</li>
-              <li>Cross-Functional Communication</li>
-              <li>Autonomous &amp; Fast Learning</li>
-              <li>Ownership &amp; End-to-End Delivery</li>
-              <li>Stakeholder Management</li>
+          <article class="tile glass tile-bio reveal">
+            <p class="tile-label mono">Profile</p>
+            <h3 class="tile-heading">I don’t just train models — I ship them into production.</h3>
+            <p>
+              Fourth-year <strong>Data Science &amp; Analytics</strong> student at USIU-Africa who builds production software.
+              I’ve shipped an agentic <strong>AI productivity assistant</strong>, behavioural and knowledge-retrieval <strong>RAG systems</strong>,
+              explainable clinical <strong>ML models</strong>, and live client sites like <strong>BikBat Insurance</strong>.
+            </p>
+            <p>
+              I own the whole lifecycle: data pipelines, modelling, APIs, containers, CI/CD and secure cloud deployment.
+            </p>
+            <ul class="meta-list">
+              <li>
+                <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>
+                <a href="mailto:calvin.g.mwangi@gmail.com">calvin.g.mwangi@gmail.com</a>
+              </li>
+              <li>
+                <svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>
+                <span>Nairobi, Kenya</span>
+              </li>
             </ul>
-          </div>
+          </article>
 
-          <div class="resume-card">
-            <h3 class="card-title"><i class="fas fa-heart"></i> Hobbies</h3>
-            <div class="hobbies-list">
-              <div class="hobby-item"><i class="fas fa-music"></i><span>Music</span></div>
-              <div class="hobby-item"><i class="fas fa-terminal"></i><span>Linux / Systems Tinkering</span></div>
-              <div class="hobby-item"><i class="fas fa-trophy"></i><span>Kaggle &amp; Data Competitions</span></div>
-              <div class="hobby-item"><i class="fas fa-book-open"></i><span>Reading (Tech &amp; Non-Fiction)</span></div>
-              <div class="hobby-item"><i class="fas fa-chess-knight"></i><span>Chess &amp; Strategy Games</span></div>
+          <figure class="tile glass tile-photo reveal">
+            <img src="portrait.webp" alt="Portrait of Calvin Gacheru Mwangi" width="592" height="798" loading="lazy" decoding="async" />
+          </figure>
+
+          <article class="tile glass tile-metrics reveal" aria-label="Key results">
+            <p class="tile-label mono">Eval metrics</p>
+            <dl class="metrics">
+              <div class="metric">
+                <dt class="mono">Best F1 — NLP sentiment</dt>
+                <dd><span class="count" data-count="93">93</span><span class="unit">%</span></dd>
+              </div>
+              <div class="metric">
+                <dt class="mono">Minority-class recall</dt>
+                <dd><span class="count" data-count="88">88</span><span class="unit">%</span></dd>
+              </div>
+              <div class="metric">
+                <dt class="mono">Projects shipped</dt>
+                <dd><span class="count" data-count="18">18</span></dd>
+              </div>
+              <div class="metric">
+                <dt class="mono">Live client site</dt>
+                <dd><span class="count" data-count="1">1</span></dd>
+              </div>
+            </dl>
+          </article>
+
+          <article class="tile glass tile-track tile-track-ds reveal">
+            <div class="track-head">
+              <p class="tile-label mono">Track 01 · Degree</p>
+              <span class="track-badge mono">BSc ’27</span>
             </div>
-          </div>
+            <h3 class="tile-heading">Data Science</h3>
+            <p>Statistical modelling, predictive analytics and explainable ML — turning messy data into decisions people can trust.</p>
+            <ul class="pill-list" aria-label="Data science skills">
+              <li>scikit-learn</li><li>XGBoost</li><li>LightGBM</li><li>SHAP</li><li>pandas</li><li>statsmodels</li><li>R</li><li>Power BI</li>
+            </ul>
+          </article>
+
+          <article class="tile glass tile-track tile-track-ai reveal">
+            <div class="track-head">
+              <p class="tile-label mono">Track 02 · Self-driven</p>
+              <span class="track-badge mono">Agentic</span>
+            </div>
+            <h3 class="tile-heading">AI Engineering</h3>
+            <p>Agents that reason, call tools and act — built with LangGraph, retrieval pipelines and both hosted and local LLMs.</p>
+            <ul class="pill-list" aria-label="AI engineering skills">
+              <li>LangGraph</li><li>LangChain</li><li>RAG</li><li>Groq</li><li>Ollama</li><li>pgvector</li><li>Qdrant</li><li>OpenAI API</li>
+            </ul>
+          </article>
+
+          <article class="tile glass tile-stack reveal">
+            <p class="tile-label mono">Stack</p>
+            <dl class="stack">
+              <div><dt>Languages</dt><dd>Python · SQL · R · Bash · JavaScript</dd></div>
+              <div><dt>Data</dt><dd>ETL pipelines · PostgreSQL · Redis · EDA · Time series</dd></div>
+              <div><dt>Serving</dt><dd>FastAPI · Flask · Django · Streamlit</dd></div>
+              <div><dt>Infra</dt><dd>Docker · Kubernetes · GitHub Actions · Linux · TLS / IAM</dd></div>
+            </dl>
+          </article>
+
+          <article class="tile glass tile-how reveal">
+            <p class="tile-label mono">How I work</p>
+            <ul class="check-list">
+              <li>End-to-end ownership</li>
+              <li>Business-minded problem solving</li>
+              <li>Cross-functional communication</li>
+              <li>Fast, autonomous learning</li>
+            </ul>
+          </article>
+
+          <article class="tile glass tile-off reveal">
+            <p class="tile-label mono">Off the clock</p>
+            <ul class="pill-list">
+              <li>Kaggle</li><li>Linux tinkering</li><li>Chess</li><li>Music</li><li>Reading</li>
+            </ul>
+            <p class="tile-foot mono">Speaks English · Swahili</p>
+          </article>
 
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-    <!-- ═══════════════════════════ PORTFOLIO ═══════════════════════ -->
-  <section class="section" id="portfolio">
-    <div class="container">
-      <div class="section-tag">04 — Portfolio</div>
-      <h2 class="section-heading">PORTFOLIO</h2>
-      <p class="portfolio-sub">Real things shipped — production deployments, client work &amp; experiments.</p>
+    <!-- ═══════════════════════════ SELECTED WORK ═══════════════════ -->
+    <section class="section" id="work" aria-labelledby="work-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow mono">02 — Selected work</p>
+          <h2 class="section-title" id="work-title">Systems I’ve <em class="serif">shipped</em>.</h2>
+          <p class="section-sub">Four projects, two tracks. Each one: the problem, the method, and what it delivered.</p>
+        </header>
 
-      <!-- AI & Machine Learning -->
-      <h3 class="portfolio-category-heading" style="margin-bottom: 1rem;">AI &amp; Machine Learning</h3>
-      <div class="portfolio-grid">
+        <h3 class="track-title mono reveal"><span class="track-num">A</span> Agentic AI</h3>
+        <div class="cases">
 
-        <!-- MySaidi -->
-        <article class="pcard featured">
-          <div class="pcard-header">
-            <i class="fas fa-robot pcard-icon"></i>
-            <div class="pcard-header-right">
-              <div class="pcard-links">
-                <a href="https://github.com/Calvin-Gacheru/MySaidi" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-              </div>
+          <article class="case glass reveal">
+            <div class="case-top">
+              <span class="case-id mono">A-01</span>
+              <a class="case-link" href="https://github.com/Calvin-Gacheru/MySaidi" target="_blank" rel="noopener" aria-label="MySaidi on GitHub (opens in new tab)">
+                <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>
+              </a>
             </div>
-          </div>
-          <h3 class="pcard-title">MySaidi — AI Productivity Assistant</h3>
-          <p class="pcard-desc">Built a full-stack AI assistant that manages tasks, calendars, and habits through natural conversation. A LangGraph agent running on Groq parses intent and directly edits the user's schedule — shipped as a secure, installable PWA with JWT auth.</p>
-          <div class="pcard-tags">
-            <span>Python</span><span>FastAPI</span><span>LangGraph</span><span>Groq LLM</span><span>PostgreSQL</span><span>JWT Auth</span><span>PWA</span>
-          </div>
-          <div class="pcard-extra-links">
-            <a href="https://github.com/Calvin-Gacheru/MySaidi" target="_blank" rel="noopener">GitHub ↗</a>
-          </div>
-        </article>
+            <h4 class="case-title">MySaidi — AI Productivity Assistant</h4>
+            <ol class="pipeline mono" aria-label="System flow">
+              <li>Chat</li><li>LangGraph agent</li><li>Groq LLM</li><li>PostgreSQL</li><li>PWA</li>
+            </ol>
+            <dl class="pmr">
+              <div><dt class="mono">Problem</dt><dd>Managing tasks, calendars and habits across apps is friction-heavy.</dd></div>
+              <div><dt class="mono">Method</dt><dd>A LangGraph agent on Groq parses intent from natural conversation and edits the user’s schedule directly.</dd></div>
+              <div><dt class="mono">Result</dt><dd>A secure, installable PWA with JWT auth — plan your day by just talking to it.</dd></div>
+            </dl>
+            <ul class="tags mono"><li>Python</li><li>FastAPI</li><li>LangGraph</li><li>Groq</li><li>PostgreSQL</li><li>JWT</li></ul>
+          </article>
 
-        <!-- AI-Powered Knowledge Retrieval System -->
-        <article class="pcard">
-          <div class="pcard-header">
-            <i class="fas fa-brain pcard-icon"></i>
-            <div class="pcard-header-right">
-              <div class="pcard-links">
-                <a href="https://github.com/Calvin-Gacheru/AI-KNOWLEDGE-RETRIEVAL-SYSTEM" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-              </div>
+          <article class="case glass reveal">
+            <div class="case-top">
+              <span class="case-id mono">A-02</span>
+              <a class="case-link" href="https://github.com/Calvin-Gacheru/AI-KNOWLEDGE-RETRIEVAL-SYSTEM" target="_blank" rel="noopener" aria-label="Knowledge Retrieval System on GitHub (opens in new tab)">
+                <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>
+              </a>
             </div>
-          </div>
-          <h3 class="pcard-title">AI-Powered Knowledge Retrieval System</h3>
-          <p class="pcard-desc">Built a full-stack RAG app that streamlines technical support by centralizing documentation. Ingests and embeds PDFs into pgvector, then uses Groq via LangChain to generate context-aware answers — Dockerized end-to-end with a built-in QA feedback loop.</p>
-          <div class="pcard-tags">
-            <span>Python</span><span>FastAPI</span><span>LangChain</span><span>Groq LLM</span><span>pgvector</span><span>Docker</span>
-          </div>
-          <div class="pcard-extra-links">
-            <a href="https://github.com/Calvin-Gacheru/AI-KNOWLEDGE-RETRIEVAL-SYSTEM" target="_blank" rel="noopener">GitHub ↗</a>
-          </div>
-        </article>
+            <h4 class="case-title">AI Knowledge Retrieval System</h4>
+            <ol class="pipeline mono" aria-label="System flow">
+              <li>PDFs</li><li>Embeddings</li><li>pgvector</li><li>LangChain + Groq</li><li>Answer</li>
+            </ol>
+            <dl class="pmr">
+              <div><dt class="mono">Problem</dt><dd>Technical-support knowledge was scattered across documents nobody could search.</dd></div>
+              <div><dt class="mono">Method</dt><dd>Ingest and embed PDFs into pgvector; retrieve context and generate grounded answers with Groq via LangChain.</dd></div>
+              <div><dt class="mono">Result</dt><dd>Context-aware answers, Dockerised end-to-end, with a built-in QA feedback loop.</dd></div>
+            </dl>
+            <ul class="tags mono"><li>Python</li><li>FastAPI</li><li>LangChain</li><li>pgvector</li><li>Docker</li></ul>
+          </article>
 
-        <!-- Behavioural Explainer -->
-        <article class="pcard">
-          <div class="pcard-header">
-            <i class="fas fa-book pcard-icon"></i>
-            <div class="pcard-header-right">
-              <div class="pcard-links">
-                <a href="https://github.com/Calvin-Gacheru/Behavioural-Explainer/" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-              </div>
+        </div>
+
+        <h3 class="track-title mono reveal"><span class="track-num">B</span> Data Science</h3>
+        <div class="cases">
+
+          <article class="case glass reveal">
+            <div class="case-top">
+              <span class="case-id mono">B-01</span>
+              <a class="case-link" href="https://github.com/Calvin-Gacheru/Maternal-Risk-Detection-System" target="_blank" rel="noopener" aria-label="Maternal Risk Detection System on GitHub (opens in new tab)">
+                <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>
+              </a>
             </div>
-          </div>
-          <h3 class="pcard-title">Behavioural Explainer</h3>
-          <p class="pcard-desc">Built a local-first RAG system that analyzes human-interaction scenarios through a psychological lens. Ingests and chunks PDFs into a vector store, then runs a local LLM to break scenarios into conflicts and behavioral mechanics — without ever prescribing advice.</p>
-          <div class="pcard-tags">
-            <span>Python</span><span>Ollama</span><span>Llama 3.1</span><span>Qdrant</span><span>RAG</span><span>Docker</span>
-          </div>
-          <div class="pcard-extra-links">
-            <a href="https://github.com/Calvin-Gacheru/Behavioural-Explainer/" target="_blank" rel="noopener">GitHub ↗</a>
-          </div>
-        </article>
+            <h4 class="case-title">Maternal Risk Detection System</h4>
+            <ol class="pipeline mono" aria-label="System flow">
+              <li>Patient vitals</li><li>Risk model</li><li>SHAP</li><li>Clinician view</li><li>SMS</li>
+            </ol>
+            <dl class="pmr">
+              <div><dt class="mono">Problem</dt><dd>High-risk pregnancies — preeclampsia, gestational diabetes, anaemia — are often flagged too late.</dd></div>
+              <div><dt class="mono">Method</dt><dd>A risk-scoring model on patient vitals, with SHAP explaining every single prediction.</dd></div>
+              <div><dt class="mono">Result</dt><dd>Explainable flags clinicians can trust, plus automated SMS reminders via Africa’s Talking.</dd></div>
+            </dl>
+            <ul class="tags mono"><li>Python</li><li>SHAP</li><li>APScheduler</li><li>SQLite</li><li>Streamlit</li></ul>
+          </article>
 
-        <!-- Uber Price Prediction & MLOps -->
-        <article class="pcard">
-          <div class="pcard-header">
-            <i class="fas fa-chart-line pcard-icon"></i>
-            <div class="pcard-header-right">
-              <div class="pcard-links">
-                <a href="https://github.com/Calvin-Gacheru/Uber-Price-Prediction" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-              </div>
+          <article class="case glass reveal">
+            <div class="case-top">
+              <span class="case-id mono">B-02</span>
+              <a class="case-link" href="https://github.com/Calvin-Gacheru/Uber-Price-Prediction" target="_blank" rel="noopener" aria-label="Uber Price Prediction on GitHub (opens in new tab)">
+                <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>
+              </a>
             </div>
-          </div>
-          <h3 class="pcard-title">Uber Price Prediction &amp; MLOps Pipeline</h3>
-          <p class="pcard-desc">Engineered a production-grade MLOps pipeline predicting Uber ride prices with a tuned Random Forest model. Served through a FastAPI + Pydantic backend behind a Streamlit UI, containerized and shipped with automated CI/CD — a repeatable path from raw data to deployment.</p>
-          <div class="pcard-tags">
-            <span>Python</span><span>scikit-learn</span><span>FastAPI</span><span>Docker</span><span>Streamlit</span><span>GitHub Actions</span>
-          </div>
-          <div class="pcard-extra-links">
-            <a href="https://github.com/Calvin-Gacheru/Uber-Price-Prediction" target="_blank" rel="noopener">GitHub ↗</a>
-          </div>
-        </article>
+            <h4 class="case-title">Uber Price Prediction &amp; MLOps</h4>
+            <ol class="pipeline mono" aria-label="System flow">
+              <li>Raw rides</li><li>Random Forest</li><li>FastAPI</li><li>Streamlit</li><li>CI/CD</li>
+            </ol>
+            <dl class="pmr">
+              <div><dt class="mono">Problem</dt><dd>Models that live in notebooks never reach the people who need predictions.</dd></div>
+              <div><dt class="mono">Method</dt><dd>A tuned Random Forest served through FastAPI + Pydantic behind a Streamlit UI, containerised.</dd></div>
+              <div><dt class="mono">Result</dt><dd>A repeatable path from raw data to deployment with automated GitHub Actions CI/CD.</dd></div>
+            </dl>
+            <ul class="tags mono"><li>scikit-learn</li><li>FastAPI</li><li>Docker</li><li>Streamlit</li><li>GitHub Actions</li></ul>
+          </article>
 
-        <!-- Maternal Risk Detection System -->
-        <article class="pcard">
-          <div class="pcard-header">
-            <i class="fas fa-heartbeat pcard-icon"></i>
-            <div class="pcard-header-right">
-              <div class="pcard-links">
-                <a href="https://github.com/Calvin-Gacheru/Maternal-Risk-Detection-System" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-              </div>
-            </div>
-          </div>
-          <h3 class="pcard-title">Maternal Risk Detection System</h3>
-          <p class="pcard-desc">Built a clinical risk-scoring system that flags high-risk pregnancies (preeclampsia, gestational diabetes, anemia) from patient vitals. SHAP explains every prediction for clinician trust, and an automated SMS pipeline sends reminders and wellness tips to patients.</p>
-          <div class="pcard-tags">
-            <span>Python</span><span>SHAP</span><span>APScheduler</span><span>SQLite</span><span>Streamlit</span><span>Africa's Talking API</span>
-          </div>
-          <div class="pcard-extra-links">
-            <a href="https://github.com/Calvin-Gacheru/Maternal-Risk-Detection-System" target="_blank" rel="noopener">GitHub ↗</a>
-          </div>
-        </article>
-
-        <!-- Diabetes Risk Screening Tool -->
-        <article class="pcard">
-          <div class="pcard-header">
-            <i class="fas fa-notes-medical pcard-icon"></i>
-            <div class="pcard-header-right">
-              <div class="pcard-links">
-                <a href="https://github.com/Calvin-Gacheru/Diabetes-Prediction" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-              </div>
-            </div>
-          </div>
-          <h3 class="pcard-title">Diabetes Risk Screening Tool</h3>
-          <p class="pcard-desc">Built a recall-optimized screening pipeline for early diabetes detection, tackling severe class imbalance with SMOTE and a class-weighted XGBoost classifier. Hits 88% recall and ships as a Streamlit app with live feature engineering on raw clinical inputs.</p>
-          <div class="pcard-tags">
-            <span>Python</span><span>XGBoost</span><span>SMOTE</span><span>scikit-learn</span><span>Streamlit</span>
-          </div>
-          <div class="pcard-extra-links">
-            <a href="https://github.com/Calvin-Gacheru/Diabetes-Prediction" target="_blank" rel="noopener">GitHub ↗</a>
-          </div>
-        </article>
-
-        <!-- Stroke Prediction Using Bayesian Networks -->
-        <article class="pcard">
-          <div class="pcard-header">
-            <i class="fas fa-project-diagram pcard-icon"></i>
-            <div class="pcard-header-right">
-              <div class="pcard-links">
-                <a href="https://github.com/Calvin-Gacheru/Bayesian-Networks" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-              </div>
-            </div>
-          </div>
-          <h3 class="pcard-title">Stroke Prediction Using Bayesian Networks</h3>
-          <p class="pcard-desc">Built a discrete Bayesian Network estimating stroke risk from clinical and lifestyle data via probabilistic reasoning. Defined a causal DAG, ran exact inference with Variable Elimination, and validated structure against a baseline using BIC/BDeu scoring.</p>
-          <div class="pcard-tags">
-            <span>Python</span><span>pgmpy</span><span>pandas</span><span>Bayesian Inference</span>
-          </div>
-          <div class="pcard-extra-links">
-            <a href="https://github.com/Calvin-Gacheru/Bayesian-Networks" target="_blank" rel="noopener">GitHub ↗</a>
-          </div>
-        </article>
-
-        <!-- Customer Subscription Prediction -->
-        <article class="pcard">
-          <div class="pcard-header">
-            <i class="fas fa-users pcard-icon"></i>
-            <div class="pcard-header-right">
-              <div class="pcard-links">
-                <a href="https://github.com/Calvin-Gacheru/Predicting-Customer-Subscription" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-              </div>
-            </div>
-          </div>
-          <h3 class="pcard-title">Customer Subscription Prediction</h3>
-          <p class="pcard-desc">Built a marketing-analytics pipeline predicting term-deposit subscriptions from bank campaign data. Tuned LightGBM against a Decision Tree baseline with GridSearchCV, reaching 88% recall on the minority class — capturing nearly every real prospect.</p>
-          <div class="pcard-tags">
-            <span>Python</span><span>LightGBM</span><span>Power BI</span><span>GridSearchCV</span>
-          </div>
-          <div class="pcard-extra-links">
-            <a href="https://github.com/Calvin-Gacheru/Predicting-Customer-Subscription" target="_blank" rel="noopener">GitHub ↗</a>
-          </div>
-        </article>
-
-        <!-- Twitter Entity Sentiment Analysis -->
-        <article class="pcard">
-          <div class="pcard-header">
-            <i class="fas fa-comments pcard-icon"></i>
-            <div class="pcard-header-right">
-              <div class="pcard-links">
-                <a href="https://github.com/Calvin-Gacheru/Twitter-Tweets-Sentimental-Analysis" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-              </div>
-            </div>
-          </div>
-          <h3 class="pcard-title">Twitter Entity Sentiment Analysis</h3>
-          <p class="pcard-desc">Built an NLP pipeline tracking public sentiment toward brands from X (Twitter) posts in real time. Tuned the classifier via GridSearchCV to a 93% F1-score and shipped it as a live Streamlit app for on-demand brand monitoring.</p>
-          <div class="pcard-tags">
-            <span>Python</span><span>NLP</span><span>scikit-learn</span><span>GridSearchCV</span><span>Streamlit</span>
-          </div>
-          <div class="pcard-extra-links">
-            <a href="https://github.com/Calvin-Gacheru/Twitter-Tweets-Sentimental-Analysis" target="_blank" rel="noopener">GitHub ↗</a>
-          </div>
-        </article>
-
-        <!-- Lung Cancer Survival Prediction -->
-        <article class="pcard">
-          <div class="pcard-header">
-            <i class="fas fa-lungs pcard-icon"></i>
-            <div class="pcard-header-right">
-              <div class="pcard-links">
-                <a href="https://github.com/Calvin-Gacheru/Predicting-Lung-Cancer-Survival" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-              </div>
-            </div>
-          </div>
-          <h3 class="pcard-title">Lung Cancer Survival Prediction</h3>
-          <p class="pcard-desc">Built a clinical data-mining pipeline predicting lung cancer survival from demographic and treatment records. Engineered features like comorbidity scoring, ran statistical survival analysis, and shipped results through an interactive Plotly dashboard for real-time risk estimates.</p>
-          <div class="pcard-tags">
-            <span>Python</span><span>scikit-learn</span><span>lifelines</span><span>Plotly</span>
-          </div>
-          <div class="pcard-extra-links">
-            <a href="https://github.com/Calvin-Gacheru/Predicting-Lung-Cancer-Survival" target="_blank" rel="noopener">GitHub ↗</a>
-          </div>
-        </article>
-
+        </div>
       </div>
+    </section>
 
-      <!-- Data Engineering & Analytics -->
-      <h3 class="portfolio-category-heading" style="margin-top: 3rem; margin-bottom: 1rem;">Data Engineering &amp; Analytics</h3>
-      <div class="portfolio-grid">
+    <!-- ═══════════════════════════ PROJECT INDEX ═══════════════════ -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow mono">03 — Project index</p>
+          <h2 class="section-title" id="projects-title">Everything <em class="serif">else</em>.</h2>
+        </header>
 
-        <!-- ETL Data Engineering -->
-        <article class="pcard">
-          <div class="pcard-header">
-            <i class="fas fa-database pcard-icon"></i>
-            <div class="pcard-header-right">
-              <div class="pcard-links">
-                <a href="https://github.com/Calvin-Gacheru/ETL-Pipeline" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-              </div>
+        <div class="filters reveal" role="group" aria-label="Filter projects by category">
+          <button type="button" class="filter glass" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="filter glass" data-filter="ai" aria-pressed="false">Agentic AI</button>
+          <button type="button" class="filter glass" data-filter="ml" aria-pressed="false">Machine learning</button>
+          <button type="button" class="filter glass" data-filter="data" aria-pressed="false">Data</button>
+          <button type="button" class="filter glass" data-filter="security" aria-pressed="false">Security</button>
+          <button type="button" class="filter glass" data-filter="web" aria-pressed="false">Web</button>
+        </div>
+        <p class="filter-status mono" id="filter-status" aria-live="polite">Showing 14 projects</p>
+
+        <ul class="index glass reveal" id="project-index">
+
+          <li class="row" data-cat="ai">
+            <span class="row-cat mono">Agentic AI</span>
+            <div class="row-main">
+              <h3 class="row-title">Behavioural Explainer</h3>
+              <p class="row-desc">Local-first RAG that analyses human-interaction scenarios through a psychological lens — conflicts and behavioural mechanics, never advice.</p>
+              <ul class="tags mono"><li>Ollama</li><li>Llama 3.1</li><li>Qdrant</li><li>Docker</li></ul>
             </div>
-          </div>
-          <h3 class="pcard-title">ETL Data Engineering</h3>
-          <p class="pcard-desc">Built custom ETL pipelines automating extraction, transformation, and loading of structured datasets — with built-in validation, logging, and scheduling for reliable, repeatable data delivery.</p>
-          <div class="pcard-tags">
-            <span>Python</span><span>SQL</span><span>Pandas</span><span>Data Engineering</span>
-          </div>
-          <div class="pcard-extra-links">
-            <a href="https://github.com/Calvin-Gacheru/ETL-Pipeline" target="_blank" rel="noopener">GitHub ↗</a>
-          </div>
-        </article>
+            <a class="row-link" href="https://github.com/Calvin-Gacheru/Behavioural-Explainer/" target="_blank" rel="noopener">GitHub<span class="sr-only"> (opens in new tab)</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </li>
 
-        <!-- Exploratory Data Analysis -->
-        <article class="pcard">
-          <div class="pcard-header">
-            <i class="fas fa-solid fa-compass pcard-icon"></i>
-            <div class="pcard-header-right">
-              <div class="pcard-links">
-                <a href="https://github.com/Calvin-Gacheru/Business-Intelligence-And-Visualization" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-              </div>
+          <li class="row" data-cat="ml">
+            <span class="row-cat mono">ML · 88% recall</span>
+            <div class="row-main">
+              <h3 class="row-title">Diabetes Risk Screening Tool</h3>
+              <p class="row-desc">Recall-optimised screening that tackles severe class imbalance with SMOTE and class-weighted XGBoost, shipped as a Streamlit app.</p>
+              <ul class="tags mono"><li>XGBoost</li><li>SMOTE</li><li>scikit-learn</li><li>Streamlit</li></ul>
             </div>
-          </div>
-          <h3 class="pcard-title">Exploratory Data Analysis</h3>
-          <p class="pcard-desc">Ran comprehensive exploratory analyses across multiple datasets to surface patterns, trends, and business-ready insights — paired with Power BI dashboards for stakeholder-facing reporting.</p>
-          <div class="pcard-tags">
-            <span>Python</span><span>Pandas</span><span>Power BI</span><span>Matplotlib</span>
-          </div>
-          <div class="pcard-extra-links">
-            <a href="https://github.com/Calvin-Gacheru/Business-Intelligence-And-Visualization" target="_blank" rel="noopener">GitHub ↗</a>
-          </div>
-        </article>
+            <a class="row-link" href="https://github.com/Calvin-Gacheru/Diabetes-Prediction" target="_blank" rel="noopener">GitHub<span class="sr-only"> (opens in new tab)</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </li>
 
-        <!-- Global Air Quality Analysis -->
-        <article class="pcard">
-          <div class="pcard-header">
-            <i class="fas fa-wind pcard-icon"></i>
-            <div class="pcard-header-right">
-              <div class="pcard-links">
-                <a href="https://github.com/Calvin-Gacheru/Air-Quality-Analysis" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-              </div>
+          <li class="row" data-cat="ml">
+            <span class="row-cat mono">ML · 93% F1</span>
+            <div class="row-main">
+              <h3 class="row-title">Twitter Entity Sentiment Analysis</h3>
+              <p class="row-desc">NLP pipeline tracking brand sentiment on X, tuned with GridSearchCV and shipped as a live Streamlit monitor.</p>
+              <ul class="tags mono"><li>NLP</li><li>scikit-learn</li><li>GridSearchCV</li><li>Streamlit</li></ul>
             </div>
-          </div>
-          <h3 class="pcard-title">Global Air Quality Analysis</h3>
-          <p class="pcard-desc">Analyzed global Air Quality Index data from the OpenAQ API to track pollutant trends across regions and time. Built heatmap and time-series visualizations, then trained a scikit-learn model to forecast AQI and quantify the impact of events like wildfires.</p>
-          <div class="pcard-tags">
-            <span>Python</span><span>Pandas</span><span>Seaborn</span><span>scikit-learn</span><span>OpenAQ API</span>
-          </div>
-          <div class="pcard-extra-links">
-            <a href="https://github.com/Calvin-Gacheru/Air-Quality-Analysis" target="_blank" rel="noopener">GitHub ↗</a>
-          </div>
-        </article>
+            <a class="row-link" href="https://github.com/Calvin-Gacheru/Twitter-Tweets-Sentimental-Analysis" target="_blank" rel="noopener">GitHub<span class="sr-only"> (opens in new tab)</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </li>
 
+          <li class="row" data-cat="ml">
+            <span class="row-cat mono">ML · 88% recall</span>
+            <div class="row-main">
+              <h3 class="row-title">Customer Subscription Prediction</h3>
+              <p class="row-desc">Marketing analytics on bank-campaign data: tuned LightGBM vs a Decision Tree baseline, capturing nearly every real prospect.</p>
+              <ul class="tags mono"><li>LightGBM</li><li>GridSearchCV</li><li>Power BI</li></ul>
+            </div>
+            <a class="row-link" href="https://github.com/Calvin-Gacheru/Predicting-Customer-Subscription" target="_blank" rel="noopener">GitHub<span class="sr-only"> (opens in new tab)</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </li>
+
+          <li class="row" data-cat="ml">
+            <span class="row-cat mono">ML · Probabilistic</span>
+            <div class="row-main">
+              <h3 class="row-title">Stroke Prediction with Bayesian Networks</h3>
+              <p class="row-desc">Causal DAG over clinical and lifestyle data, exact inference via Variable Elimination, structure validated with BIC/BDeu.</p>
+              <ul class="tags mono"><li>pgmpy</li><li>pandas</li><li>Bayesian inference</li></ul>
+            </div>
+            <a class="row-link" href="https://github.com/Calvin-Gacheru/Bayesian-Networks" target="_blank" rel="noopener">GitHub<span class="sr-only"> (opens in new tab)</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </li>
+
+          <li class="row" data-cat="ml">
+            <span class="row-cat mono">ML · Survival</span>
+            <div class="row-main">
+              <h3 class="row-title">Lung Cancer Survival Prediction</h3>
+              <p class="row-desc">Clinical data-mining with engineered comorbidity scores, survival analysis and an interactive Plotly risk dashboard.</p>
+              <ul class="tags mono"><li>scikit-learn</li><li>lifelines</li><li>Plotly</li></ul>
+            </div>
+            <a class="row-link" href="https://github.com/Calvin-Gacheru/Predicting-Lung-Cancer-Survival" target="_blank" rel="noopener">GitHub<span class="sr-only"> (opens in new tab)</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </li>
+
+          <li class="row" data-cat="data">
+            <span class="row-cat mono">Data engineering</span>
+            <div class="row-main">
+              <h3 class="row-title">ETL Data Engineering</h3>
+              <p class="row-desc">Custom pipelines automating extract, transform and load with validation, logging and scheduling for repeatable delivery.</p>
+              <ul class="tags mono"><li>Python</li><li>SQL</li><li>pandas</li></ul>
+            </div>
+            <a class="row-link" href="https://github.com/Calvin-Gacheru/ETL-Pipeline" target="_blank" rel="noopener">GitHub<span class="sr-only"> (opens in new tab)</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </li>
+
+          <li class="row" data-cat="data">
+            <span class="row-cat mono">Analytics · BI</span>
+            <div class="row-main">
+              <h3 class="row-title">Exploratory Data Analysis</h3>
+              <p class="row-desc">EDA across multiple datasets surfacing business-ready insights, paired with stakeholder-facing Power BI dashboards.</p>
+              <ul class="tags mono"><li>pandas</li><li>Power BI</li><li>Matplotlib</li></ul>
+            </div>
+            <a class="row-link" href="https://github.com/Calvin-Gacheru/Business-Intelligence-And-Visualization" target="_blank" rel="noopener">GitHub<span class="sr-only"> (opens in new tab)</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </li>
+
+          <li class="row" data-cat="data">
+            <span class="row-cat mono">Analytics · Forecast</span>
+            <div class="row-main">
+              <h3 class="row-title">Global Air Quality Analysis</h3>
+              <p class="row-desc">OpenAQ data on pollutant trends across regions, with heatmaps, time-series views and an AQI forecasting model.</p>
+              <ul class="tags mono"><li>pandas</li><li>Seaborn</li><li>scikit-learn</li><li>OpenAQ</li></ul>
+            </div>
+            <a class="row-link" href="https://github.com/Calvin-Gacheru/Air-Quality-Analysis" target="_blank" rel="noopener">GitHub<span class="sr-only"> (opens in new tab)</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </li>
+
+          <li class="row" data-cat="security">
+            <span class="row-cat mono">Security · 100k records</span>
+            <div class="row-main">
+              <h3 class="row-title">Secure Cloud Storage Architecture</h3>
+              <p class="row-desc">Hardened MinIO in Docker with TLS transport, IAM/RBAC policies and KMS server-side encryption, validated on 100,000 synthetic records.</p>
+              <ul class="tags mono"><li>MinIO</li><li>Docker</li><li>TLS</li><li>IAM/RBAC</li></ul>
+            </div>
+            <a class="row-link" href="https://github.com/Calvin-Gacheru/Secure-Cloud-Storage" target="_blank" rel="noopener">GitHub<span class="sr-only"> (opens in new tab)</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </li>
+
+          <li class="row" data-cat="web">
+            <span class="row-cat mono">Web · Live client</span>
+            <div class="row-main">
+              <h3 class="row-title">BikBat Insurance</h3>
+              <p class="row-desc">Full business website delivered end-to-end for a live client — domain, DNS, hosting and conversion-focused content.</p>
+              <ul class="tags mono"><li>HTML/CSS/JS</li><li>DNS &amp; hosting</li></ul>
+            </div>
+            <a class="row-link" href="https://bikbatinsurance.com" target="_blank" rel="noopener">Live site<span class="sr-only"> (opens in new tab)</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </li>
+
+          <li class="row" data-cat="web">
+            <span class="row-cat mono">Web · Live</span>
+            <div class="row-main">
+              <h3 class="row-title">Arcade Kenya</h3>
+              <p class="row-desc">A live multi-game entertainment platform with rich animation and a strong brand identity, built from scratch.</p>
+              <ul class="tags mono"><li>JavaScript</li><li>Animation</li></ul>
+            </div>
+            <span class="row-links">
+              <a class="row-link" href="https://calvin-gacheru.github.io/ArcadeKenya/" target="_blank" rel="noopener">Live<span class="sr-only"> site (opens in new tab)</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              <a class="row-link" href="https://github.com/Calvin-Gacheru/ArcadeKenya" target="_blank" rel="noopener">Code<span class="sr-only"> on GitHub (opens in new tab)</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </span>
+          </li>
+
+          <li class="row" data-cat="web">
+            <span class="row-cat mono">Web · Custom</span>
+            <div class="row-main">
+              <h3 class="row-title">Valen Time Love</h3>
+              <p class="row-desc">A bespoke, personalised web experience built from a custom client brief.</p>
+              <ul class="tags mono"><li>JavaScript</li><li>Custom UX</li></ul>
+            </div>
+            <a class="row-link" href="https://calvin-gacheru.github.io/Valen_Time_Love/" target="_blank" rel="noopener">Live site<span class="sr-only"> (opens in new tab)</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </li>
+
+          <li class="row" data-cat="web">
+            <span class="row-cat mono">Web · Template</span>
+            <div class="row-main">
+              <h3 class="row-title">WebCraft — Website Brochure</h3>
+              <p class="row-desc">A responsive brochure-site template engineered for fast customisation across business verticals.</p>
+              <ul class="tags mono"><li>HTML/CSS/JS</li><li>Responsive</li></ul>
+            </div>
+            <a class="row-link" href="https://calvin-gacheru.github.io/WebsiteBrochure/" target="_blank" rel="noopener">Live site<span class="sr-only"> (opens in new tab)</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </li>
+
+        </ul>
       </div>
+    </section>
 
-      <!-- Cybersecurity & Infrastructure -->
-      <h3 class="portfolio-category-heading" style="margin-top: 3rem; margin-bottom: 1rem;">Cybersecurity &amp; Infrastructure</h3>
-      <div class="portfolio-grid">
+    <!-- ═══════════════════════════ EXPERIENCE ══════════════════════ -->
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow mono">04 — Experience</p>
+          <h2 class="section-title" id="experience-title">Training <em class="serif">log</em>.</h2>
+        </header>
 
-        <!-- Secure Cloud Storage -->
-        <article class="pcard">
-          <div class="pcard-header">
-            <i class="fas fa-lock pcard-icon"></i>
-            <div class="pcard-header-right">
-              <div class="pcard-links">
-                <a href="https://github.com/Calvin-Gacheru/Secure-Cloud-Storage" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-              </div>
-            </div>
-          </div>
-          <h3 class="pcard-title">Secure Cloud Storage Architecture</h3>
-          <p class="pcard-desc">Stood up a hardened MinIO object-storage environment in Docker to demonstrate enterprise security controls: TLS-encrypted transport, RBAC via custom IAM policies, and server-side encryption with a KMS key. Validated against a synthetic dataset of 100,000 corporate records.</p>
-          <div class="pcard-tags">
-            <span>Python</span><span>MinIO</span><span>Docker</span><span>TLS/SSL</span><span>IAM/RBAC</span>
-          </div>
-          <div class="pcard-extra-links">
-            <a href="https://github.com/Calvin-Gacheru/Secure-Cloud-Storage" target="_blank" rel="noopener">GitHub ↗</a>
-          </div>
-        </article>
+        <ol class="timeline">
 
+          <li class="epoch glass reveal">
+            <p class="epoch-meta mono"><span class="epoch-tag tag-live">Ongoing</span> Self-directed</p>
+            <h3 class="epoch-title">AI Engineering — Agentic Systems</h3>
+            <p>Designing and shipping agentic AI on the side: stateful LangGraph agents, tool-calling, RAG over vector stores, and local LLMs with Ollama.</p>
+          </li>
+
+          <li class="epoch glass reveal">
+            <p class="epoch-meta mono"><span class="epoch-tag tag-live">2026</span> Freelance · Nairobi</p>
+            <h3 class="epoch-title">Full-Stack Developer — BikBat Insurance Agency</h3>
+            <p>Engineered and deployed the client’s corporate web platform end-to-end, directing domain configuration, DNS and secure cloud hosting for a reliable launch.</p>
+            <a class="inline-link" href="https://bikbatinsurance.com" target="_blank" rel="noopener">bikbatinsurance.com<span class="sr-only"> (opens in new tab)</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </li>
+
+          <li class="epoch glass reveal">
+            <p class="epoch-meta mono"><span class="epoch-tag">2025</span> Internship · Remote</p>
+            <h3 class="epoch-title">Data Science Virtual Intern — ProdigyInfoTech</h3>
+            <p>Delivered four end-to-end projects in EDA, predictive modelling, churn analytics and NLP sentiment — reproducible, documented workflows throughout.</p>
+            <ul class="tags mono link-tags">
+              <li><a href="https://github.com/Calvin-Gacheru/PRODIGY_DS_01" target="_blank" rel="noopener">EDA</a></li>
+              <li><a href="https://github.com/Calvin-Gacheru/PRODIGY_DS_02" target="_blank" rel="noopener">Predictive</a></li>
+              <li><a href="https://github.com/Calvin-Gacheru/PRODIGY_DS_03" target="_blank" rel="noopener">Churn</a></li>
+              <li><a href="https://github.com/Calvin-Gacheru/PRODIGY_DS_04" target="_blank" rel="noopener">Sentiment</a></li>
+            </ul>
+          </li>
+
+          <li class="epoch glass reveal">
+            <p class="epoch-meta mono"><span class="epoch-tag">Year 4 of 4</span> Expected 2027</p>
+            <h3 class="epoch-title">BSc Data Science &amp; Analytics — USIU-Africa</h3>
+            <p>United States International University — Africa. Statistics, machine learning, data engineering and business analytics.</p>
+          </li>
+
+        </ol>
       </div>
+    </section>
 
-      <!-- Web Applications & Corporate Sites -->
-      <h3 class="portfolio-category-heading" style="margin-top: 3rem; margin-bottom: 1rem;">Web Applications &amp; Corporate Sites</h3>
-      <div class="portfolio-grid">
+    <!-- ═══════════════════════════ CERTIFICATES ════════════════════ -->
+    <section class="section" id="certificates" aria-labelledby="certificates-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow mono">05 — Certificates</p>
+          <h2 class="section-title" id="certificates-title">Verified <em class="serif">learning</em>.</h2>
+        </header>
 
-        <!-- BikBat Insurance -->
-        <article class="pcard">
-          <div class="pcard-header">
-            <i class="fas fa-building-shield pcard-icon"></i>
-            <div class="pcard-header-right">
-              <div class="pcard-links">
-                <a href="https://bikbatinsurance.com" target="_blank" rel="noopener" aria-label="Live Site"><i class="fas fa-arrow-up-right-from-square"></i></a>
-              </div>
+        <div class="certs">
+          <article class="cert glass reveal">
+            <svg class="icon cert-icon" aria-hidden="true"><use href="#i-award"/></svg>
+            <p class="tile-label mono">ProdigyInfoTech · 2025</p>
+            <h3 class="cert-title">Data Science Virtual Internship</h3>
+            <p>End-to-end projects in exploratory analysis, predictive modelling, churn analytics and sentiment analysis.</p>
+            <div class="cert-actions">
+              <button type="button" class="btn btn-glass btn-sm" data-cert="Certificates/Prodigy%20Certificate.pdf" data-cert-title="Data Science Virtual Internship — ProdigyInfoTech">
+                <svg class="icon" aria-hidden="true"><use href="#i-file"/></svg> Preview
+              </button>
+              <a class="inline-link" href="Certificates/Prodigy%20Certificate.pdf" target="_blank" rel="noopener">Open PDF<span class="sr-only"> (opens in new tab)</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
             </div>
-          </div>
-          <h3 class="pcard-title">BikBat Insurance</h3>
-          <p class="pcard-desc">Delivered the full business website end-to-end for a live client — domain, DNS, hosting, and content. A brochure site with service listings and trust-building content built to convert visitors into leads.</p>
-          <div class="pcard-tags">
-            <span>HTML/CSS/JS</span><span>DNS &amp; Hosting</span><span>Client Delivery</span>
-          </div>
-          <div class="pcard-extra-links">
-            <a href="https://bikbatinsurance.com" target="_blank" rel="noopener">Live Site ↗</a>
-          </div>
-        </article>
+          </article>
 
-        <!-- Arcade Kenya -->
-        <article class="pcard">
-          <div class="pcard-header">
-            <i class="fas fa-gamepad pcard-icon"></i>
-            <div class="pcard-header-right">
-              <div class="pcard-links">
-                <a href="https://github.com/Calvin-Gacheru/ArcadeKenya" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://calvin-gacheru.github.io/ArcadeKenya/" target="_blank" rel="noopener" aria-label="Live Site"><i class="fas fa-arrow-up-right-from-square"></i></a>
-              </div>
+          <article class="cert glass reveal">
+            <svg class="icon cert-icon" aria-hidden="true"><use href="#i-award"/></svg>
+            <p class="tile-label mono">Simplilearn</p>
+            <h3 class="cert-title">Building AI Agents using LangGraph</h3>
+            <p>LangGraph agent workflows, stateful orchestration patterns and practical AI agent implementation.</p>
+            <div class="cert-actions">
+              <button type="button" class="btn btn-glass btn-sm" data-cert="Certificates/Simplilearn%20Certificate.pdf" data-cert-title="Building AI Agents using LangGraph — Simplilearn">
+                <svg class="icon" aria-hidden="true"><use href="#i-file"/></svg> Preview
+              </button>
+              <a class="inline-link" href="Certificates/Simplilearn%20Certificate.pdf" target="_blank" rel="noopener">Open PDF<span class="sr-only"> (opens in new tab)</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
             </div>
-          </div>
-          <h3 class="pcard-title">Arcade Kenya</h3>
-          <p class="pcard-desc">Built and shipped a live, multi-game entertainment platform with rich animation and a strong brand identity — a production-grade site with smooth transitions, engineered from scratch rather than a template.</p>
-          <div class="pcard-tags">
-            <span>JavaScript</span><span>HTML/CSS</span><span>Animation</span>
-          </div>
-          <div class="pcard-extra-links">
-            <a href="https://github.com/Calvin-Gacheru/ArcadeKenya" target="_blank" rel="noopener">GitHub ↗</a>
-            <a href="https://calvin-gacheru.github.io/ArcadeKenya/" target="_blank" rel="noopener">Live Site ↗</a>
-          </div>
-        </article>
-
-        <!-- Valen Time Love -->
-        <article class="pcard">
-          <div class="pcard-header">
-            <i class="fas fa-heart pcard-icon"></i>
-            <div class="pcard-header-right">
-              <div class="pcard-links">
-                <a href="https://calvin-gacheru.github.io/Valen_Time_Love/" target="_blank" rel="noopener" aria-label="Live Site"><i class="fas fa-arrow-up-right-from-square"></i></a>
-              </div>
-            </div>
-          </div>
-          <h3 class="pcard-title">Valen Time Love</h3>
-          <p class="pcard-desc">Built a bespoke, personalized web application from a custom client brief — proof of shipping beyond templates when the vision calls for a fully custom experience.</p>
-          <div class="pcard-tags">
-            <span>JavaScript</span><span>HTML/CSS</span><span>Custom UX</span>
-          </div>
-          <div class="pcard-extra-links">
-            <a href="https://calvin-gacheru.github.io/Valen_Time_Love/" target="_blank" rel="noopener">Live Site ↗</a>
-          </div>
-        </article>
-
-        <!-- WebCraft - Website Brochure -->
-        <article class="pcard">
-          <div class="pcard-header">
-            <i class="fas fa-file-lines pcard-icon"></i>
-            <div class="pcard-header-right">
-              <div class="pcard-links">
-                <a href="https://calvin-gacheru.github.io/WebsiteBrochure/" target="_blank" rel="noopener" aria-label="Live Site"><i class="fas fa-arrow-up-right-from-square"></i></a>
-              </div>
-            </div>
-          </div>
-          <h3 class="pcard-title">WebCraft — Website Brochure</h3>
-          <p class="pcard-desc">Built a modern, responsive brochure-site template engineered for fast customization and deployment across different business verticals.</p>
-          <div class="pcard-tags">
-            <span>HTML/CSS/JS</span><span>Responsive Design</span><span>Templating</span>
-          </div>
-          <div class="pcard-extra-links">
-            <a href="https://calvin-gacheru.github.io/WebsiteBrochure/" target="_blank" rel="noopener">Live Site ↗</a>
-          </div>
-        </article>
-
+          </article>
+        </div>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <!-- ═══════════════════════════ CONTACT ═════════════════════════ -->
+    <section class="section section-contact" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact glass reveal">
+          <p class="eyebrow mono">06 — Contact</p>
+          <h2 class="contact-title" id="contact-title">Let’s build something <em class="serif">intelligent</em>.</h2>
+          <p class="section-sub">Open to internships, graduate roles, freelance work and collaborations on data or agentic AI.</p>
 
-  <!-- ═══════════════════════ CERTIFICATIONS ═════════════════════ -->
-  <section class="section" id="certifications">
-    <div class="container">
-      <div class="section-tag">05 — Certifications</div>
-      <h2 class="section-heading">CERTIFICATIONS</h2>
-      <p class="cert-sub">Validated programs and continuous upskilling across Data Science, AI, and deployment workflows.</p>
-
-      <div class="portfolio-grid cert-grid">
-
-        <article class="pcard cert-card featured" tabindex="0" role="button" aria-label="Toggle Data Science Virtual Internship certificate card" aria-pressed="false">
-          <div class="cert-card-inner">
-
-            <div class="cert-face cert-front">
-              <div class="pcard-header">
-                <i class="fas fa-certificate pcard-icon"></i>
-                <div class="pcard-header-right">
-                  <span class="live-badge"><span class="live-dot"></span>Completed</span>
-                  <div class="pcard-links">
-                    <a href="https://github.com/Calvin-Gacheru/PRODIGY_DS_01" target="_blank" rel="noopener" aria-label="Program Work"><i class="fab fa-github"></i></a>
-                  </div>
-                </div>
-              </div>
-              <h3 class="pcard-title">Data Science Virtual Internship</h3>
-              <p class="pcard-desc">ProdigyInfoTech (2025): Completed end-to-end projects in exploratory analysis, predictive modeling, churn analytics, and sentiment analysis with reproducible workflows.</p>
-              <div class="pcard-tags">
-                <span>EDA</span><span>Machine Learning</span><span>Churn Analysis</span><span>Sentiment Analysis</span>
-              </div>
-              <div class="pcard-extra-links">
-                <a href="https://github.com/Calvin-Gacheru/PRODIGY_DS_01" target="_blank" rel="noopener">Task 01 ↗</a>
-                <a href="https://github.com/Calvin-Gacheru/PRODIGY_DS_02" target="_blank" rel="noopener">Task 02 ↗</a>
-                <a href="https://github.com/Calvin-Gacheru/PRODIGY_DS_03" target="_blank" rel="noopener">Task 03 ↗</a>
-                <a href="https://github.com/Calvin-Gacheru/PRODIGY_DS_04" target="_blank" rel="noopener">Task 04 ↗</a>
-              </div>
-              <div class="cert-flip-hint"><i class="fas fa-hand-pointer"></i> Click card to reveal certificate</div>
-            </div>
-
-            <div class="cert-face cert-back">
-              <div class="cert-back-head">
-                <h3 class="pcard-title">Certificate Preview</h3>
-                <span class="live-badge"><span class="live-dot"></span>Front/Back</span>
-              </div>
-
-              <div class="cert-preview cert-preview-pdf">
-                <object class="cert-pdf" data="Certificates/Prodigy%20Certificate.pdf" type="application/pdf" aria-label="Prodigy certificate PDF preview">
-                  <div class="cert-fallback cert-fallback-static">
-                    <i class="fas fa-file-pdf"></i>
-                    <p>PDF preview is not supported in this browser.</p>
-                    <p class="cert-fallback-note">Use the button below to open the certificate in a new tab.</p>
-                  </div>
-                </object>
-              </div>
-
-              <div class="cert-actions">
-                <a href="Certificates/Prodigy%20Certificate.pdf" target="_blank" rel="noopener" class="cert-link">Open Certificate ↗</a>
-                <button type="button" class="cert-toggle" data-cert-toggle>Back to Details</button>
-              </div>
-            </div>
-
+          <div class="contact-cta">
+            <a class="btn btn-primary btn-lg magnetic" href="mailto:calvin.g.mwangi@gmail.com">
+              <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>
+              calvin.g.mwangi@gmail.com
+            </a>
+            <button type="button" class="btn btn-glass btn-lg magnetic" id="copy-email" data-email="calvin.g.mwangi@gmail.com">
+              <svg class="icon icon-copy" aria-hidden="true"><use href="#i-copy"/></svg>
+              <svg class="icon icon-check" aria-hidden="true"><use href="#i-check"/></svg>
+              <span class="copy-label">Copy email</span>
+            </button>
+            <span class="sr-only" id="copy-status" aria-live="polite"></span>
           </div>
-        </article>
 
-        <article class="pcard cert-card" tabindex="0" role="button" aria-label="Toggle Building AI Agents using LangGraph certificate card" aria-pressed="false">
-          <div class="cert-card-inner">
-
-            <div class="cert-face cert-front">
-              <div class="pcard-header">
-                <i class="fas fa-book-open-reader pcard-icon"></i>
-                <div class="pcard-header-right">
-                  <span class="live-badge"><span class="live-dot"></span>Completed</span>
-                </div>
-              </div>
-              <h3 class="pcard-title">Building AI Agents using LangGraph</h3>
-              <p class="pcard-desc">Simplilearn course completion certificate covering LangGraph-based agent workflows, stateful orchestration patterns, and practical AI agent implementation.</p>
-              <div class="pcard-tags">
-                <span>LangGraph</span><span>Agentic AI</span><span>Workflow Orchestration</span><span>LLM Applications</span>
-              </div>
-              <div class="pcard-extra-links">
-                <a href="Certificates/Simplilearn%20Certificate.pdf" target="_blank" rel="noopener">View Certificate ↗</a>
-                <a href="mailto:calvin.g.mwangi@gmail.com">Verify Credential ↗</a>
-              </div>
-              <div class="cert-flip-hint"><i class="fas fa-hand-pointer"></i> Click card to reveal certificate</div>
-            </div>
-
-            <div class="cert-face cert-back">
-              <div class="cert-back-head">
-                <h3 class="pcard-title">Certificate Preview</h3>
-                <span class="live-badge"><span class="live-dot"></span>Front/Back</span>
-              </div>
-
-              <div class="cert-preview cert-preview-pdf">
-                <object class="cert-pdf" data="Certificates/Simplilearn%20Certificate.pdf" type="application/pdf" aria-label="Simplilearn certificate PDF preview">
-                  <div class="cert-fallback cert-fallback-static">
-                    <i class="fas fa-file-pdf"></i>
-                    <p>PDF preview is not supported in this browser.</p>
-                    <p class="cert-fallback-note">Use the button below to open the certificate in a new tab.</p>
-                  </div>
-                </object>
-              </div>
-
-              <div class="cert-actions">
-                <a href="Certificates/Simplilearn%20Certificate.pdf" target="_blank" rel="noopener" class="cert-link">Open Certificate ↗</a>
-                <button type="button" class="cert-toggle" data-cert-toggle>Back to Details</button>
-              </div>
-            </div>
-
-          </div>
-        </article>
-
+          <ul class="socials">
+            <li><a class="social" href="https://github.com/Calvin-Gacheru" target="_blank" rel="noopener">
+              <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>
+              <span><span class="social-label mono">GitHub</span>@Calvin-Gacheru</span>
+            </a></li>
+            <li><a class="social" href="https://ke.linkedin.com/in/calvin-gacheru-057672281" target="_blank" rel="noopener">
+              <svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg>
+              <span><span class="social-label mono">LinkedIn</span>calvin-gacheru</span>
+            </a></li>
+            <li><a class="social" href="https://instagram.com/cmgacheru" target="_blank" rel="noopener">
+              <svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg>
+              <span><span class="social-label mono">Instagram</span>@cmgacheru</span>
+            </a></li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ═══════════════════════════ CONTACT ═════════════════════════ -->
-  <section class="section" id="contact">
-    <div class="container">
-      <div class="section-tag">06 — Contact</div>
-      <h2 class="section-heading">CONTACT</h2>
-      <p class="contact-sub">Available for internships, freelance work &amp; collaborations.</p>
-
-      <div class="contact-grid">
-        <a href="mailto:calvin.g.mwangi@gmail.com" class="contact-card">
-          <i class="fas fa-envelope contact-icon"></i>
-          <div>
-            <div class="contact-label">Email</div>
-            <div class="contact-val">calvin.g.mwangi@gmail.com</div>
-          </div>
-        </a>
-        <a href="https://github.com/Calvin-Gacheru" target="_blank" rel="noopener" class="contact-card">
-          <i class="fab fa-github contact-icon"></i>
-          <div>
-            <div class="contact-label">GitHub</div>
-            <div class="contact-val">@Calvin-Gacheru</div>
-          </div>
-        </a>
-        <a href="https://ke.linkedin.com/in/calvin-gacheru-057672281" target="_blank" rel="noopener" class="contact-card">
-          <i class="fab fa-linkedin-in contact-icon"></i>
-          <div>
-            <div class="contact-label">LinkedIn</div>
-            <div class="contact-val">calvin-gacheru-057672281</div>
-          </div>
-        </a>
-        <a href="https://instagram.com/cmgacheru" target="_blank" rel="noopener" class="contact-card">
-          <i class="fab fa-instagram contact-icon"></i>
-          <div>
-            <div class="contact-label">Instagram</div>
-            <div class="contact-val">@cmgacheru</div>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
+  </main>
 
   <!-- ═══════════════════════════ FOOTER ══════════════════════════ -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <span class="footer-logo"><span class="logo-bracket"></span>CGM<span class="logo-bracket"></span></span>
-      <p class="footer-copy">© 2026 Calvin Gacheru Mwangi.</p>
-      <div class="footer-socials">
-        <a href="https://github.com/Calvin-Gacheru" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://ke.linkedin.com/in/calvin-gacheru-057672281" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://instagram.com/cmgacheru" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <!-- Center this -->
+      <div class="footer-center">
+        <p class="mono">© <span id="year">2026</span> Calvin Gacheru Mwangi</p>
       </div>
+      <a href="#home" class="mono footer-top">Back to top ↑</a>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- ═══════════════════════════ CERT DIALOG ═════════════════════ -->
+  <dialog class="cert-dialog glass" id="cert-dialog" aria-labelledby="cert-dialog-title">
+    <div class="dialog-head">
+      <h2 class="dialog-title" id="cert-dialog-title">Certificate</h2>
+      <button type="button" class="icon-btn" id="cert-close" aria-label="Close certificate preview">
+        <svg class="icon" aria-hidden="true"><use href="#i-x"/></svg>
+      </button>
+    </div>
+    <div class="dialog-body">
+      <object class="cert-pdf" id="cert-pdf" type="application/pdf" aria-label="Certificate PDF preview">
+        <p class="cert-fallback">PDF preview isn’t supported in this browser. Use “Open in new tab” below.</p>
+      </object>
+    </div>
+    <div class="dialog-foot">
+      <a class="inline-link" id="cert-open" href="#" target="_blank" rel="noopener">Open in new tab<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+  </dialog>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
