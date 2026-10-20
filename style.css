@@ -24,6 +24,9 @@
   --glass-hi:      rgba(255,255,255,0.07);
   --glass-shadow:  0 20px 50px -24px rgba(0,0,0,0.65);
   --glass-blur:    blur(20px) saturate(160%);
+  --nav-bg:        rgba(16,20,25,0.34);
+  --nav-menu-bg:   rgba(16,20,25,0.48);
+  --scrim:         rgba(5,7,10,0.35);
   --sheen:         rgba(184,243,90,0.10);
 
   --blob-1:        rgba(56,189,248,0.32);
@@ -60,6 +63,9 @@
 
   --glass-bg:      rgba(255,255,255,0.62);
   --glass-bg-h:    rgba(255,255,255,0.78);
+  --nav-bg:        rgba(255,255,255,0.36);
+  --nav-menu-bg:   rgba(255,255,255,0.5);
+  --scrim:         rgba(240,243,238,0.3);
   --glass-border:  rgba(255,255,255,0.75);
   --glass-hi:      rgba(255,255,255,0.9);
   --glass-shadow:  0 20px 50px -28px rgba(20,30,40,0.35);
@@ -266,7 +272,7 @@ strong { font-weight: 600; color: var(--text); }
 .nav-bar::before {
   content: ''; position: absolute; inset: 0; z-index: -1;
   border-radius: inherit;
-  background: var(--glass-bg);
+  background: var(--nav-bg);
   -webkit-backdrop-filter: var(--glass-blur);
   backdrop-filter: var(--glass-blur);
   border: 1px solid var(--glass-border);
@@ -309,7 +315,7 @@ strong { font-weight: 600; color: var(--text); }
     position: absolute; top: calc(100% + 10px); left: 0; right: 0;
     padding: 10px;
     border-radius: var(--radius);
-    background: var(--glass-bg-h);
+    background: var(--nav-menu-bg);
     -webkit-backdrop-filter: var(--glass-blur);
     backdrop-filter: var(--glass-blur);
     border: 1px solid var(--glass-border);
@@ -326,6 +332,21 @@ strong { font-weight: 600; color: var(--text); }
   .nav-links a { padding: .9rem 1rem; font-size: 1.05rem; border-radius: 12px; }
   .nav-links a:hover, .nav-links a.active { background: var(--line); }
   .nav-indicator { display: none; }
+
+  /* Blur the page behind the open menu */
+  body::after {
+    content: ''; position: fixed; inset: 0; z-index: 99;
+    background: var(--scrim);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    opacity: 0; visibility: hidden;
+    transition: opacity .3s var(--ease), visibility 0s .3s;
+  }
+  .menu-open body::after {
+    opacity: 1; visibility: visible;
+    transition: opacity .3s var(--ease);
+  }
+  .menu-open { overflow: hidden; }
 }
 @media (min-width: 880px) {
   .menu-toggle { display: none; }
@@ -449,6 +470,9 @@ strong { font-weight: 600; color: var(--text); }
 }
 .section-title .serif, .contact-title .serif { color: var(--signal-text); font-size: 1.08em; }
 .section-sub { margin-top: 1rem; color: var(--muted); font-size: 1.05rem; max-width: 36rem; }
+/* First section on inner pages sits under the fixed nav */
+.section-first { padding-top: calc(var(--nav-h) + clamp(56px, 8vw, 110px)); }
+.section-more { margin-top: clamp(2rem, 4vw, 3rem); display: flex; }
 
 /* ═══════════════════════ BENTO ═══════════════════════ */
 .bento {
@@ -730,6 +754,8 @@ strong { font-weight: 600; color: var(--text); }
 
 /* ═══════════════════════ CONTACT ═══════════════════════ */
 .section-contact { padding-bottom: clamp(48px, 7vw, 80px); }
+/* Standalone contact page: fill the viewport so the footer sits at the bottom */
+.section-first.section-contact { min-height: calc(100svh - 120px); display: flex; align-items: center; }
 .contact {
   padding: clamp(2rem, 6vw, 4.5rem);
   text-align: left;
@@ -750,7 +776,8 @@ strong { font-weight: 600; color: var(--text); }
 #copy-email.is-copied .icon-copy { display: none; }
 
 .socials { margin-top: 2.5rem; display: grid; gap: 10px; }
-@media (min-width: 720px) { .socials { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 720px) { .socials { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .socials { grid-template-columns: repeat(4, 1fr); } }
 .social {
   display: flex; align-items: center; gap: .9rem;
   min-height: 64px; padding: .9rem 1.1rem;
@@ -767,12 +794,34 @@ strong { font-weight: 600; color: var(--text); }
 
 /* ═══════════════════════ FOOTER ═══════════════════════ */
 .footer { padding-block: 2rem 2.5rem; border-top: 1px solid var(--line); }
+.footer-cta {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem 2rem;
+  padding-block: clamp(1.5rem, 4vw, 2.5rem) clamp(2rem, 5vw, 3rem);
+}
+.footer-cta-text { font-size: clamp(1.3rem, 3vw, 1.9rem); font-weight: 600; letter-spacing: -0.03em; line-height: 1.2; }
 .footer-inner {
-  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .75rem 1.5rem;
+  display: flex; justify-content: center; text-align: center;
   font-size: .78rem; color: var(--muted);
 }
-.footer-top { text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; }
-.footer-top:hover { color: var(--signal-text); }
+
+/* ═══════════════════════ BACK TO TOP ═══════════════════════ */
+.to-top {
+  position: fixed; z-index: 90;
+  right: max(16px, env(safe-area-inset-right));
+  bottom: max(20px, env(safe-area-inset-bottom));
+  width: 48px; height: 48px; border-radius: 50%;
+  display: grid; place-items: center;
+  color: var(--text);
+  opacity: 0; visibility: hidden;
+  transform: translateY(16px) scale(.9);
+  transition: opacity .3s var(--ease), transform .35s var(--ease), visibility 0s .35s, border-color .25s;
+}
+.to-top.is-shown {
+  opacity: 1; visibility: visible; transform: none;
+  transition: opacity .3s var(--ease), transform .35s var(--ease), border-color .25s;
+}
+.to-top:hover { border-color: var(--signal-text); color: var(--signal-text); }
+.to-top .icon { width: 20px; height: 20px; transform: rotate(-45deg); }
 
 /* ═══════════════════════ REVEAL ═══════════════════════ */
 .js .reveal {
@@ -805,7 +854,7 @@ strong { font-weight: 600; color: var(--text); }
 
 /* ═══════════════════════ PRINT ═══════════════════════ */
 @media print {
-  .ambient, .nav, .hero-field, .scroll-cue, .filters, .filter-status, .cert-dialog { display: none !important; }
+  .ambient, .nav, .to-top, .hero-field, .scroll-cue, .filters, .filter-status, .cert-dialog { display: none !important; }
   .glass { background: none; box-shadow: none; border-color: #ccc; }
   .js .reveal { opacity: 1; transform: none; }
 }

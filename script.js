@@ -70,6 +70,7 @@ const finePointer   = window.matchMedia('(hover: hover) and (pointer: fine)');
 
   const setOpen = (open) => {
     menu.classList.toggle('open', open);
+    document.documentElement.classList.toggle('menu-open', open);
     toggle.setAttribute('aria-expanded', String(open));
     toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
   };
@@ -101,21 +102,8 @@ const finePointer   = window.matchMedia('(hover: hover) and (pointer: fine)');
   // Close the mobile menu if the viewport grows past the breakpoint
   window.matchMedia('(min-width: 880px)').addEventListener?.('change', (e) => { if (e.matches) setOpen(false); });
 
-  // Active section tracking
-  const sections = links
-    .map(link => document.getElementById(link.dataset.section))
-    .filter(Boolean);
-
-  const setActive = (id) => {
-    let activeLink = null;
-    links.forEach(link => {
-      const isActive = link.dataset.section === id;
-      link.classList.toggle('active', isActive);
-      if (isActive) { link.setAttribute('aria-current', 'location'); activeLink = link; }
-      else link.removeAttribute('aria-current');
-    });
-    moveIndicator(activeLink);
-  };
+  // Slide the indicator under the current page's link
+  const pageLink = links.find(link => link.getAttribute('aria-current') === 'page') || null;
 
   function moveIndicator(link) {
     if (!indicator) return;
@@ -125,19 +113,9 @@ const finePointer   = window.matchMedia('(hover: hover) and (pointer: fine)');
     indicator.style.setProperty('--ind-o', '1');
   }
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => { if (entry.isIntersecting) setActive(entry.target.id); });
-  }, { rootMargin: '-45% 0px -50% 0px' });
-  sections.forEach(sec => observer.observe(sec));
-
-  // Clear the highlight while the hero is in view
-  const hero = document.getElementById('home');
-  if (hero) {
-    new IntersectionObserver(([entry]) => { if (entry.isIntersecting) setActive(null); },
-      { rootMargin: '-45% 0px -50% 0px' }).observe(hero);
-  }
-
-  window.addEventListener('resize', () => moveIndicator(links.find(l => l.classList.contains('active'))), { passive: true });
+  moveIndicator(pageLink);
+  document.fonts?.ready.then(() => moveIndicator(pageLink));
+  window.addEventListener('resize', () => moveIndicator(pageLink), { passive: true });
 })();
 
 
@@ -578,7 +556,39 @@ const finePointer   = window.matchMedia('(hover: hover) and (pointer: fine)');
 
 
 /* ──────────────────────────────────────────
-   9. FOOTER YEAR
+   9. BACK TO TOP — appears while scrolling up
+─────────────────────────────────────────── */
+(function initToTop() {
+  const btn = document.getElementById('to-top');
+  if (!btn) return;
+
+  const MIN_Y = 400;   // never show near the top of the page
+  const DELTA = 6;     // ignore tiny scroll jitter
+  let lastY = window.scrollY;
+  let ticking = false;
+
+  const update = () => {
+    const y = window.scrollY;
+    if (y < MIN_Y) btn.classList.remove('is-shown');
+    else if (y < lastY - DELTA) btn.classList.add('is-shown');
+    else if (y > lastY + DELTA) btn.classList.remove('is-shown');
+    if (Math.abs(y - lastY) > DELTA || y < MIN_Y) lastY = y;
+    ticking = false;
+  };
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }, { passive: true });
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: reducedMotion.matches ? 'auto' : 'smooth' });
+    btn.blur();
+  });
+})();
+
+
+/* ──────────────────────────────────────────
+   10. FOOTER YEAR
 ─────────────────────────────────────────── */
 (function initYear() {
   const el = document.getElementById('year');
