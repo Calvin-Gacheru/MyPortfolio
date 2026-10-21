@@ -1,84 +1,114 @@
 # Calvin Gacheru Mwangi
-**Data Scientist & AI Engineer**
+**Data Scientist & AI Engineer — Agentic AI, RAG and Production ML**
 
-Nairobi, Kenya | calvin.g.mwangi@gmail.com | [LinkedIn](https://linkedin.com/in/calvin-gacheru-057672281) | [GitHub](https://github.com/Calvin-Gacheru) | [Portfolio](https://calvin-gacheru.github.io/MyPortfolio/)
+Nairobi, Kenya | [calvin.g.mwangi@gmail.com](mailto:calvin.g.mwangi@gmail.com) | [Portfolio](https://calvin-gacheru.github.io/MyPortfolio/) | [LinkedIn](https://ke.linkedin.com/in/calvin-gacheru-057672281) | [GitHub](https://github.com/Calvin-Gacheru)
 
 ---
 
-## Professional Summary
+## Profile
 
-Results-driven Data Science and AI Engineering student with proven experience across the full machine learning lifecycle — from data engineering and model development to cloud deployment and MLOps automation. Specializes in building production-ready **Agentic AI** systems, **RAG (Retrieval-Augmented Generation)** architectures, and predictive ML models using **Python**. Skilled at translating raw data into scalable, business-ready software solutions with a strong focus on automation, CI/CD, and analytics-driven decision-making.
+Final-year Data Science & Analytics student at USIU-Africa who builds AI systems end to end, from data pipeline to deployed service. I design **LangGraph agents** and **RAG** systems on PostgreSQL/pgvector, train and explain ML and deep-learning models (XGBoost, PyTorch, SHAP, Grad-CAM), and ship them behind **FastAPI** in **Docker** with CI/CD. I have delivered a live production website for a commercial client, and my portfolio includes 20 public projects. I am looking for graduate and junior roles in AI engineering, machine learning and data science.
 
 ---
 
 ## Technical Skills
 
-- **Programming Languages:** Python (Advanced), SQL, R, Bash, HTML/CSS/JavaScript
-- **Machine Learning & AI:** scikit-learn, Pandas, NumPy, LangChain, LangGraph, RAG, Agentic AI, OpenAI API, Groq LLM, Qdrant, NLP, Time Series Analysis, Predictive Analytics
-- **Infrastructure & MLOps:** Docker, Kubernetes, CI/CD (GitHub Actions), PostgreSQL, Redis, FastAPI, Flask, Django, Linux, Git
-- **Data & Business Intelligence:** ETL Pipelines, Exploratory Data Analysis (EDA), Data Visualization, Power BI, Matplotlib
+- **Languages:** Python (advanced), SQL, JavaScript, HTML/CSS, R, Bash
+- **LLMs & Agentic AI:** LangGraph, LangChain, RAG, tool calling, pgvector, Qdrant, sentence-transformer embeddings, Groq, DeepSeek, OpenAI API, Ollama (Llama 3.1)
+- **Machine Learning:** scikit-learn, XGBoost, LightGBM, PyTorch (CNNs, transfer learning), NLP, time-series forecasting, imbalanced learning (SMOTE), Bayesian networks (pgmpy)
+- **Explainability & Eval:** SHAP, Grad-CAM, Integrated Gradients, stratified and group k-fold cross-validation, threshold tuning, calibration
+- **Engineering & MLOps:** FastAPI, Pydantic, Docker, Docker Compose, GitHub Actions CI/CD, PostgreSQL, SQLAlchemy, Redis, Kubernetes, Linux, Git, uv
+- **Data & BI:** pandas, NumPy, ETL pipelines, EDA, Power BI, Plotly, Matplotlib, Seaborn, Streamlit
+- **Security:** TLS/SSL, IAM/RBAC policies, server-side encryption (KMS), JWT authentication, sandboxed code execution
 
 ---
 
-## Professional Experience
+## Experience
 
-### Freelance Full-Stack Developer — BikBat Insurance Agency
-*Nairobi, Kenya | 2026*
+### Freelance Web Developer — BikBat Insurance Agency
+*Nairobi, Kenya · live client engagement | 2026*
 
-- Engineered and deployed a full-stack corporate web platform end-to-end for a commercial insurance client, delivering a production-ready digital presence aligned with business requirements.
-- Directed the complete deployment lifecycle — including domain configuration, DNS management, and secure cloud hosting — ensuring a reliable, scalable launch with minimal downtime.
+- Delivered the client's business website from brief to production as the sole developer, covering requirements, build, content and launch.
+- Owned the deployment end to end, covering domain registration, DNS and hosting. Live at [bikbatinsurance.com](https://bikbatinsurance.com).
+- Structured service listings and trust-building content to convert visitors into insurance enquiries.
 
-### Data Science Virtual Intern — ProdigyInfoTech
-*Remote | 2025*
+### Data Science Intern — Prodigy InfoTech
+*Remote · completed with outstanding remarks | Sep 2025*
 
-- Delivered 4 end-to-end data science projects spanning exploratory data analysis, predictive modeling, customer churn analytics, and NLP sentiment analysis within internship timelines.
-- Built reproducible, well-documented data workflows that improved analytical transparency and reliability, emphasizing data quality and model interpretability across all deliverables.
+- Delivered four end-to-end projects on real-world datasets: exploratory analysis, predictive modelling, customer-churn analytics and NLP sentiment analysis.
+- Shipped each one as a documented, reproducible repository, with emphasis on data quality checks and model interpretability.
 
 ---
 
 ## Selected Projects
 
-### MySaidi — AI Productivity Assistant *(Agentic AI)*
-**Python | FastAPI | LangGraph | Groq LLM | PostgreSQL**
+### MyAnalyst — Autonomous Data Analysis Agent · [GitHub](https://github.com/Calvin-Gacheru/Automated-Junior-Analyst) · 2026
+*Python · LangGraph · FastAPI · PostgreSQL/pgvector · Docker · DeepSeek · pandas*
 
-- Architected a full-stack Progressive Web App (PWA) leveraging NLP and conversational AI to help users manage schedules and habits through natural language interaction.
-- Designed and implemented a decoupled browser-to-REST API architecture, integrating a LangGraph-powered **Agentic AI** system driven by Groq LLMs to parse user intent and dynamically query/modify data via bound tool calling.
+- Built a multi-modal analysis workspace. Users upload CSV/XLSX data and PDF/DOCX documents, and a LangGraph agent profiles, cleans and forecasts the data before any question is asked.
+- Designed a routed Q&A graph with three tracks: quantitative, document and hybrid. It plans, writes and runs pandas code, then retries automatically on failure. The hybrid track checks computed figures against targets in the documents and cites its sources.
+- Ran LLM-generated code in a network-isolated, non-root, resource-limited Docker sandbox with datasets mounted read-only. Added pgvector semantic search, persistent business rules and AutoML modelling.
 
-### Uber Price Prediction & MLOps Pipeline
-**Docker | GitHub Actions | FastAPI | Streamlit | Random Forest**
+### MySaidi — AI Productivity Assistant · [GitHub](https://github.com/Calvin-Gacheru/MySaidi) · 2026
+*Python · FastAPI · LangGraph · Groq (Llama 3.3 70B) · PostgreSQL (asyncpg) · JWT · PWA*
 
-- Engineered an enterprise-grade **MLOps** pipeline to predict ride prices using an optimized Random Forest Regressor, translating raw trip data into a deployable prediction service.
-- Automated the full machine learning lifecycle — from training to deployment — using CI/CD pipelines (GitHub Actions) and multi-container Docker orchestration, reducing manual deployment overhead.
+- Built a full-stack assistant whose LangGraph agent turns natural conversation into tool calls that create, update and review tasks, calendar events and habits.
+- Shipped it as an installable Progressive Web App with JWT/bcrypt authentication, an async PostgreSQL backend and cloud deployment on Railway.
 
-### Diabetes Risk Screening Tool
-**XGBoost | SMOTE | scikit-learn | Streamlit**
+### AI Knowledge Retrieval System — RAG for Technical Support · [GitHub](https://github.com/Calvin-Gacheru/AI-KNOWLEDGE-RETRIEVAL-SYSTEM) · 2026
+*Python · LangChain · pgvector · all-MiniLM-L6-v2 · Groq · FastAPI · Docker Compose*
 
-- Developed a recall-optimized diagnostic pipeline to address severe class imbalance in medical screening data using SMOTE resampling and XGBoost.
-- Achieved an **88% recall rate** for minority classes, prioritizing the minimization of false negatives in a medical diagnostics context.
+- Centralised scattered support PDFs into a single PostgreSQL store for documents and vectors. Embeddings run locally and Groq generates grounded answers. Every query is logged, and an engineer feedback loop rates answer quality.
 
-### Behavioural Explainer — RAG Architecture
-**PyMuPDF | Qdrant | Ollama | Llama 3.1**
+### LexiAssist — Explainable Handwriting Screening · [GitHub](https://github.com/Calvin-Gacheru/LexiAssist) · 2026
+*Python · PyTorch · ResNet18 · Grad-CAM · Integrated Gradients · Streamlit*
 
-- Constructed a production-grade **RAG (Retrieval-Augmented Generation)** system to analyze and explain complex psychological framework scenarios using Llama 3.1.
-- Engineered a document ingestion pipeline that mapped document embeddings into a Qdrant vector database, accessible through a custom Typer CLI for streamlined querying.
+- Fine-tuned an ImageNet ResNet18 in two stages against a custom CNN baseline to flag possible dyslexia-related patterns in handwriting.
+- Validated it with writer-aware stratified group 5-fold cross-validation so that no writer's samples leak between splits, and tuned the decision threshold for recall of at least 0.90.
+- Deployed it as a Streamlit app with Grad-CAM heatmaps, a consent gate and an explicit limitations panel. The app documents its own failure modes rather than overstating accuracy.
 
-### Lung Cancer Survival Prediction
-**Random Forest | Plotly | Survival Analysis**
+### Uber Price Prediction — Production MLOps Pipeline · [GitHub](https://github.com/Calvin-Gacheru/Uber-Price-Prediction) · 2026
+*Python · scikit-learn · FastAPI · Pydantic · Streamlit · Docker Compose · GitHub Actions*
 
-- Collaborated on a data pipeline to extract and analyze clinical records, applying survival analysis techniques to estimate patient outcomes.
-- Engineered advanced clinical features — including temporal tracking and comorbidity scoring — and deployed an interactive Plotly dashboard to visualize survival predictions.
+- Engineered temporal and spatial features from **93,000 ride records**. A leakage-safe scikit-learn pipeline reached a mean **R² of 0.985** (SD 0.002) across 5-fold cross-validation.
+- Served the model through a validated FastAPI microservice and a Streamlit client, with multi-container Docker orchestration and GitHub Actions CI on every push.
+
+### MamaGuard — Maternal Risk Detection System · [GitHub](https://github.com/Calvin-Gacheru/Maternal-Risk-Detection-System) · 2026
+*Python · XGBoost · Random Forest · SHAP · Streamlit · SQLite · APScheduler · Africa's Talking SMS*
+
+- Built clinical decision support for community health workers. It scores the risk of preeclampsia, gestational diabetes and anaemia from vitals, using engineered features such as MAP and BP velocity.
+- Explained each prediction with SHAP and generated WHO-aligned action plans. Automated appointment booking, SMS reminders and escalation to a nurse after three missed visits.
+
+---
+
+## Additional Projects
+
+- **Diabetes Risk Screening** — handled severe class imbalance with SMOTE and class-weighted XGBoost, reaching **88% recall**, and shipped it as a Streamlit app.
+- **Twitter Entity Sentiment Analysis** — built an NLP pipeline tuned with GridSearchCV to a **93% F1-score** and deployed it as a live brand-monitoring app.
+- **Secure Cloud Storage Architecture** — hardened MinIO with TLS, IAM/RBAC policies and KMS server-side encryption, validated on **100,000** synthetic records.
+- **Behavioural Explainer** — built a local-first RAG system (Ollama, Llama 3.1, Qdrant) with a Typer CLI that explains interpersonal scenarios through psychology research.
+- **Stroke Prediction with Bayesian Networks** — built a causal DAG with exact inference by variable elimination, with the structure validated using BIC/BDeu.
+
+Full list of 20 projects: [calvin-gacheru.github.io/MyPortfolio/projects.html](https://calvin-gacheru.github.io/MyPortfolio/projects.html)
 
 ---
 
 ## Education
 
-**Bachelor of Science in Data Science & Analytics**
-United States International University Africa (USIU-Africa), Nairobi, Kenya
-*Expected Graduation: 2027 (Year 4 of 4)*
+**BSc Data Science & Analytics** — Expected 2027
+United States International University – Africa (USIU-Africa), Nairobi · final year (Year 4 of 4)
 
 ---
 
 ## Certifications
 
-- Building AI Agents using LangGraph — Simplilearn (2026)
-- Data Science Virtual Internship — ProdigyInfoTech (2025)
+- **Build AI Agents using LangGraph** — Simplilearn (credential 10119397) — Apr 2026
+- **Data Science Internship, Certificate of Completion** — Prodigy InfoTech (PIT/SEP25/00116) — Oct 2025
+
+---
+
+## Languages & Interests
+
+**Languages:** English (native), Swahili (native) | **Interests:** Kaggle competitions, Linux and systems tinkering, chess, music, reading
+
+*References available on request.*

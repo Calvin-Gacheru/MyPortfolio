@@ -1,0 +1,168 @@
+% Calvin Gacheru Mwangi — Résumé (one-page version of Calvin_Gacheru_CV.tex)
+% Build: xelatex Calvin_Gacheru_Resume.tex
+% Single-column, text-based layout so applicant tracking systems parse it cleanly.
+
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[a4paper,top=11mm,bottom=10mm,left=14mm,right=14mm]{geometry}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage[hidelinks]{hyperref}
+
+\setmainfont{SourceSans3}[
+  Path           = /usr/share/fonts/adobe-source-sans-pro-fonts/,
+  Extension      = .otf,
+  UprightFont    = *-Regular,
+  BoldFont       = *-Semibold,
+  ItalicFont     = *-It,
+  BoldItalicFont = *-SemiboldIt,
+  FontFace       = {sb}{n}{*-Bold},
+]
+
+\definecolor{ink}{HTML}{1A1D21}
+\definecolor{muted}{HTML}{5B6470}
+\definecolor{accent}{HTML}{0F5E9C}
+\definecolor{rule}{HTML}{C9D1DA}
+\color{ink}
+
+\hypersetup{
+  pdftitle    = {Calvin Gacheru Mwangi — Résumé},
+  pdfauthor   = {Calvin Gacheru Mwangi},
+  pdfsubject  = {Résumé — Data Scientist and AI Engineer},
+  pdfkeywords = {Data Scientist, AI Engineer, Machine Learning, LangGraph, RAG, MLOps, Python, Nairobi},
+}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\linespread{1.0}
+\frenchspacing
+\XeTeXgenerateactualtext=1
+\hyphenpenalty=6000
+\exhyphenpenalty=6000
+\emergencystretch=1.5em
+
+% Section headings: small caps label with a hairline rule
+\titleformat{\section}
+  {\color{accent}\fontsize{10.5}{12}\selectfont\bfseries\addfontfeatures{LetterSpace=8}}
+  {}{0pt}{\MakeUppercase}
+  [{\vspace{2pt}\color{rule}\titlerule[0.6pt]}]
+\titlespacing*{\section}{0pt}{7pt}{4pt}
+
+\setlist[itemize]{leftmargin=11pt, itemsep=1pt, topsep=1.5pt, parsep=0pt, label={\color{muted}\textbullet}}
+
+\newcommand{\sep}{\hspace{0.45em}{\color{rule}|}\hspace{0.45em}}
+\newcommand{\meta}[1]{{\color{muted}#1}}
+% \skill{Label}{Items} — run-in label, not a table or aligned column, so ATS text extraction keeps label and items together
+\newcommand{\skill}[2]{{\textbf{#1:}\hspace{0.4em}#2\par}\vspace{2pt}}
+
+% \entry{Title}{Right-aligned date}{Subtitle line}
+\newcommand{\entry}[3]{%
+  \begin{tabularx}{\linewidth}{@{}X r@{}}
+    {\fontsize{10.5}{12.5}\selectfont\bfseries #1} & \meta{#2} \\
+  \end{tabularx}\\[-1pt]
+  {\color{muted}\itshape #3}\par
+}
+
+% \project{Name}{Link text}{URL}{Year}{Stack}
+\newcommand{\project}[5]{%
+  \begin{tabularx}{\linewidth}{@{}X r@{}}
+    {\fontsize{10.5}{12.5}\selectfont\bfseries #1}\hspace{0.5em}\href{#3}{\color{accent}\small #2} & \meta{#4} \\
+  \end{tabularx}\\[-1pt]
+  {\color{muted}\small #5}\par
+}
+
+\begin{document}
+
+% ───────────────────────────── Header ─────────────────────────────
+{\fontsize{22}{26}\selectfont\fontseries{sb}\selectfont Calvin Gacheru Mwangi}\par
+\vspace{2pt}
+{\fontsize{11.5}{13.5}\selectfont\color{accent} Data Scientist \& AI Engineer\,—\,Agentic AI, RAG and Production ML}\par
+\vspace{4pt}
+{\small\color{muted}
+Nairobi, Kenya\sep
+\href{mailto:calvin.g.mwangi@gmail.com}{calvin.g.mwangi@gmail.com}\sep
+\href{https://calvin-gacheru.github.io/MyPortfolio/}{calvin-gacheru.github.io/MyPortfolio}\sep
+\href{https://ke.linkedin.com/in/calvin-gacheru-057672281}{LinkedIn}\sep
+\href{https://github.com/Calvin-Gacheru}{github.com/Calvin-Gacheru}
+}\par
+
+% ───────────────────────────── Summary ─────────────────────────────
+\section{Summary}
+Final-year Data Science student at USIU-Africa who ships AI systems, not just notebooks. I build \textbf{LangGraph agents} and \textbf{RAG} pipelines on pgvector,
+train and explain ML models, and deploy them with \textbf{FastAPI}, \textbf{Docker} and CI/CD. I have delivered a live production website for a commercial client,
+and I am seeking graduate or junior roles in AI engineering, ML or data science.
+
+% ───────────────────────────── Skills ─────────────────────────────
+\section{Skills}
+\skill{Languages}{Python (advanced), SQL, JavaScript, HTML/CSS, R, Bash}
+\skill{AI \& LLMs}{LangGraph, LangChain, RAG, tool calling, pgvector, Qdrant, Groq, DeepSeek, OpenAI API, Ollama}
+\skill{Machine Learning}{scikit-learn, XGBoost, LightGBM, PyTorch, NLP, time-series forecasting, SHAP, Grad-CAM, \mbox{cross-validation}}
+\skill{Engineering \& MLOps}{FastAPI, Docker, GitHub Actions CI/CD, PostgreSQL, SQLAlchemy, Redis, Kubernetes, Linux, Git}
+\skill{Data \& Security}{pandas, NumPy, ETL, Power BI, Plotly, Streamlit\sep TLS/SSL, IAM/RBAC, KMS encryption, JWT auth}
+
+% ───────────────────────────── Experience ─────────────────────────────
+\section{Experience}
+\entry{Freelance Web Developer — BikBat Insurance Agency}{2026}{Nairobi, Kenya\,·\,live client engagement}
+\begin{itemize}
+  \item Delivered the client's business website as sole developer, from brief to production. I owned domain registration, DNS and hosting, and the site is live at \href{https://bikbatinsurance.com}{\color{accent}\mbox{bikbatinsurance.com}}.
+  \item Structured service listings and trust-building content to convert visitors into insurance enquiries.
+\end{itemize}
+
+\vspace{4pt}
+\entry{Data Science Intern — Prodigy InfoTech}{Sep 2025}{Remote\,·\,completed with outstanding remarks}
+\begin{itemize}
+  \item Delivered four end-to-end projects, covering EDA, predictive modelling, customer churn and NLP sentiment analysis, each as a documented, reproducible repository.
+\end{itemize}
+
+% ───────────────────────────── Projects ─────────────────────────────
+\section{Projects}
+
+\project{MyAnalyst — Autonomous Data Analysis Agent}{GitHub}{https://github.com/Calvin-Gacheru/Automated-Junior-Analyst}{2026}
+  {Python · LangGraph · FastAPI · PostgreSQL/pgvector · Docker · DeepSeek}
+\begin{itemize}
+  \item Built a LangGraph agent that profiles, cleans and forecasts uploaded datasets. It routes each question to a quantitative, document or hybrid track, and the hybrid track checks computed figures against document targets with citations.
+  \item Ran LLM-generated pandas code in a network-isolated, non-root, resource-limited Docker sandbox, with automatic retries when a run fails.
+\end{itemize}
+
+\vspace{3pt}
+\project{MySaidi — AI Productivity Assistant}{GitHub}{https://github.com/Calvin-Gacheru/MySaidi}{2026}
+  {Python · FastAPI · LangGraph · Groq (Llama 3.3 70B) · PostgreSQL · JWT · PWA}
+\begin{itemize}
+  \item Built a LangGraph agent that turns natural conversation into tool calls on tasks, calendar events and habits. Shipped it as an installable PWA with JWT authentication, deployed on Railway.
+\end{itemize}
+
+\vspace{3pt}
+\project{LexiAssist — Explainable Handwriting Screening}{GitHub}{https://github.com/Calvin-Gacheru/LexiAssist}{2026}
+  {Python · PyTorch · ResNet18 · Grad-CAM · Streamlit}
+\begin{itemize}
+  \item Fine-tuned ResNet18 against a CNN baseline, using writer-aware group 5-fold cross-validation and a decision threshold tuned for recall of at least 0.90. Served it in Streamlit with Grad-CAM heatmaps and a consent gate.
+\end{itemize}
+
+\vspace{3pt}
+\project{Uber Price Prediction — Production MLOps Pipeline}{GitHub}{https://github.com/Calvin-Gacheru/Uber-Price-Prediction}{2026}
+  {Python · scikit-learn · FastAPI · Streamlit · Docker Compose · GitHub Actions}
+\begin{itemize}
+  \item Reached a mean \textbf{R\textsuperscript{2} of 0.985} across 5-fold cross-validation on \textbf{93,000 rides} with a leakage-safe pipeline. Served it through FastAPI and Streamlit in multi-container Docker, with CI on every push.
+\end{itemize}
+
+\begin{itemize}
+  \item \textbf{Also:} RAG knowledge retrieval for technical support (LangChain, pgvector, Groq)\sep MamaGuard maternal-risk scoring (XGBoost, SHAP, SMS alerts)\sep
+  diabetes screening (XGBoost + SMOTE, \textbf{88\% recall})\sep Twitter sentiment NLP (\textbf{93\% F1})\sep secure MinIO storage (TLS, RBAC, KMS; \textbf{100k} records)\sep
+  \href{https://calvin-gacheru.github.io/MyPortfolio/projects.html}{\color{accent}all 20 projects}
+\end{itemize}
+
+% ───────────────────────────── Education ─────────────────────────────
+\section{Education \& Certifications}
+\begin{tabularx}{\linewidth}{@{}X r@{}}
+\textbf{BSc Data Science \& Analytics} — USIU-Africa, Nairobi \meta{(final year)} & \meta{Expected 2027} \\[1pt]
+\textbf{Build AI Agents using LangGraph} — Simplilearn & \meta{Apr 2026} \\[1pt]
+\textbf{Data Science Internship, Certificate of Completion} — Prodigy InfoTech & \meta{Oct 2025} \\
+\end{tabularx}\par
+\vspace{4pt}
+{\small\textbf{Languages:} English (native), Swahili (native)}
+
+\end{document}
