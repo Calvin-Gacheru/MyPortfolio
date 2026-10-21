@@ -263,7 +263,7 @@
             <h3 class="tile-heading">I don’t just train models — I ship them into production.</h3>
             <p>
               Fourth-year <strong>Data Science &amp; Analytics</strong> student at USIU-Africa who builds production software.
-              I’ve shipped an agentic <strong>AI productivity assistant</strong>, behavioural and knowledge-retrieval <strong>RAG systems</strong>,
+              I’ve shipped an <strong>autonomous data-analysis agent</strong> with sandboxed code execution, an agentic <strong>AI productivity assistant</strong>, <strong>RAG systems</strong>,
               explainable clinical <strong>ML models</strong>, and live client sites like <strong>BikBat Insurance</strong>.
             </p>
             <p>
@@ -286,19 +286,19 @@
           </figure>
 
           <article class="tile glass tile-metrics reveal" aria-label="Key results">
-            <p class="tile-label mono">Eval metrics</p>
+            <p class="tile-label mono">Key results</p>
             <dl class="metrics">
+              <div class="metric">
+                <dt class="mono">Variance explained (R²) — 93k rides</dt>
+                <dd><span class="count" data-count="98.5" data-decimals="1">98.5</span><span class="unit">%</span></dd>
+              </div>
               <div class="metric">
                 <dt class="mono">Best F1 — NLP sentiment</dt>
                 <dd><span class="count" data-count="93">93</span><span class="unit">%</span></dd>
               </div>
               <div class="metric">
-                <dt class="mono">Minority-class recall</dt>
-                <dd><span class="count" data-count="88">88</span><span class="unit">%</span></dd>
-              </div>
-              <div class="metric">
                 <dt class="mono">Projects shipped</dt>
-                <dd><span class="count" data-count="18">18</span></dd>
+                <dd><span class="count" data-count="20">20</span></dd>
               </div>
               <div class="metric">
                 <dt class="mono">Live client site</dt>
@@ -332,6 +332,25 @@
           <article class="case glass reveal">
             <div class="case-top">
               <span class="case-id mono">A-01</span>
+              <a class="case-link" href="https://github.com/Calvin-Gacheru/Automated-Junior-Analyst" target="_blank" rel="noopener" aria-label="MyAnalyst on GitHub (opens in new tab)">
+                <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>
+              </a>
+            </div>
+            <h4 class="case-title">MyAnalyst — Autonomous Data Analysis Agent</h4>
+            <ol class="pipeline mono" aria-label="System flow">
+              <li>Data + docs</li><li>LangGraph router</li><li>Plan → code</li><li>Docker sandbox</li><li>Cited answer</li>
+            </ol>
+            <dl class="pmr">
+              <div><dt class="mono">Problem</dt><dd>Answering business questions means juggling spreadsheets, policy documents and ad-hoc analysis code.</dd></div>
+              <div><dt class="mono">Method</dt><dd>A LangGraph agent routes each question to quant, document or hybrid tracks, writes pandas code, runs it in a network-isolated Docker sandbox and retries on failure.</dd></div>
+              <div><dt class="mono">Result</dt><dd>Proactive EDA and forecasts on upload, plus answers that check computed numbers against targets in the documents, with citations.</dd></div>
+            </dl>
+            <ul class="tags mono"><li>Python</li><li>LangGraph</li><li>FastAPI</li><li>pgvector</li><li>Docker</li><li>DeepSeek</li></ul>
+          </article>
+
+          <article class="case glass reveal">
+            <div class="case-top">
+              <span class="case-id mono">A-02</span>
               <a class="case-link" href="https://github.com/Calvin-Gacheru/MySaidi" target="_blank" rel="noopener" aria-label="MySaidi on GitHub (opens in new tab)">
                 <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>
               </a>
@@ -346,25 +365,6 @@
               <div><dt class="mono">Result</dt><dd>A secure, installable PWA with JWT auth — plan your day by just talking to it.</dd></div>
             </dl>
             <ul class="tags mono"><li>Python</li><li>FastAPI</li><li>LangGraph</li><li>Groq</li><li>PostgreSQL</li><li>JWT</li></ul>
-          </article>
-
-          <article class="case glass reveal">
-            <div class="case-top">
-              <span class="case-id mono">A-02</span>
-              <a class="case-link" href="https://github.com/Calvin-Gacheru/AI-KNOWLEDGE-RETRIEVAL-SYSTEM" target="_blank" rel="noopener" aria-label="Knowledge Retrieval System on GitHub (opens in new tab)">
-                <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>
-              </a>
-            </div>
-            <h4 class="case-title">AI Knowledge Retrieval System</h4>
-            <ol class="pipeline mono" aria-label="System flow">
-              <li>PDFs</li><li>Embeddings</li><li>pgvector</li><li>LangChain + Groq</li><li>Answer</li>
-            </ol>
-            <dl class="pmr">
-              <div><dt class="mono">Problem</dt><dd>Technical-support knowledge was scattered across documents nobody could search.</dd></div>
-              <div><dt class="mono">Method</dt><dd>Ingest and embed PDFs into pgvector; retrieve context and generate grounded answers with Groq via LangChain.</dd></div>
-              <div><dt class="mono">Result</dt><dd>Context-aware answers, Dockerised end-to-end, with a built-in QA feedback loop.</dd></div>
-            </dl>
-            <ul class="tags mono"><li>Python</li><li>FastAPI</li><li>LangChain</li><li>pgvector</li><li>Docker</li></ul>
           </article>
 
         </div>

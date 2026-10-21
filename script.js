@@ -164,13 +164,14 @@ const finePointer   = window.matchMedia('(hover: hover) and (pointer: fine)');
       if (!entry.isIntersecting) return;
       const el = entry.target;
       const target = Number(el.dataset.count);
+      const decimals = Number(el.dataset.decimals || 0);
       const duration = 1400;
       const start = performance.now();
 
       const tick = (now) => {
         const t = Math.min((now - start) / duration, 1);
         const eased = 1 - Math.pow(1 - t, 4);
-        el.textContent = String(Math.round(target * eased));
+        el.textContent = (target * eased).toFixed(decimals);
         if (t < 1) requestAnimationFrame(tick);
       };
       requestAnimationFrame(tick);
@@ -179,7 +180,7 @@ const finePointer   = window.matchMedia('(hover: hover) and (pointer: fine)');
   }, { threshold: 0.6 });
 
   counters.forEach(el => {
-    el.textContent = '0';
+    el.textContent = (0).toFixed(Number(el.dataset.decimals || 0));
     observer.observe(el);
   });
 })();
